@@ -1,4 +1,4 @@
-import RzNotification from "../components/rz-notification";
+import RzNotification from "../animation-components/rz-notification";
 
 const NotificationPage = () => {
   const code = `

@@ -1,4 +1,4 @@
-import RzTable from "../components/rz-table";
+import RzTable from "../animation-components/rz-table";
 
 const TablePage = () => {
   const code = ` 

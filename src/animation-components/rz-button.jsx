@@ -8,7 +8,6 @@ const RzButton = ({
   secondaryButton,
   disabledButton,
   icon: IconComponent,
-  size,
   buttonRadius,
 }) => {
   const createRipple = (e) => {
