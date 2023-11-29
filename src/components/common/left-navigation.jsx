@@ -20,6 +20,15 @@ const LeftNavigation = () => {
       items: [
         { text: "Cards", path: "/card-page" },
         { text: "Table", path: "/table-component-page" },
+        { text: "Header", path: "/header-page" },
+        { text: "Footer", path: "/footer-page" },
+        {
+          text: "Ticket requester Profile",
+          path: "/ticket-requester-profile-page",
+        },
+        { text: "Breadcrumb", path: "/breadcrumb-page" },
+        { text: "Search", path: "/search-page" },
+        { text: "Popover", path: "/popover-page" },
       ],
     },
   ];

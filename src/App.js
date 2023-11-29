@@ -10,6 +10,13 @@ import DropdownPage from "./pages/dropdown-page";
 import TablePage from "./pages/table-page.jsx";
 import CardPage from "./pages/card-page.jsx";
 import RzTableComponent from "./pages/table-component-page.jsx";
+import HeaderPage from "./pages/header-page.jsx";
+import FooterPage from "./pages/footer-page.jsx";
+import TicketRequesterProfilePage from "./pages/ticket-requester-profile-page.jsx"
+import BreadcrumbPage from "./pages/breadcrumb-page.jsx";
+import SearchPage from"./pages/search-page.jsx";
+import PopoverPage from "./pages/popover-page.jsx";
+
 
 function App() {
   return (
@@ -19,14 +26,38 @@ function App() {
         <div className="flex-1 overflow-hidden">
           <Routes>
             <Route path="/button-animation" element={<ButtonAnimationPage />} />
-            <Route path="/checkboxes-toggle-page" element={<CheckBoxesAndTogglePage />}/>
+            <Route
+              path="/checkboxes-toggle-page"
+              element={<CheckBoxesAndTogglePage />}
+            />
             <Route path="/input-field-page" element={<InputFieldPage />} />
             <Route path="/progresser-page" element={<ProgresserPage />} />
             <Route path="/notification-page" element={<NotificationPage />} />
             <Route path="/dropdown-page" element={<DropdownPage />} />
             <Route path="/table-page" element={<TablePage />} />
             <Route path="/card-page" element={<CardPage />} />
-            <Route path="/table-component-page" element={<RzTableComponent />} />
+            <Route
+              path="/table-component-page"
+              element={<RzTableComponent />}
+            />
+            <Route path="/header-page" element={<HeaderPage />} />
+            <Route path="/footer-page" element={<FooterPage />} />
+            <Route
+              path="/ticket-requester-profile-page"
+              element={<TicketRequesterProfilePage />}
+            />
+              <Route
+              path="/breadcrumb-page"
+              element={<BreadcrumbPage />}
+            />
+            <Route
+              path="/search-page"
+              element={<SearchPage />}
+            />
+             <Route
+              path="/popover-page"
+              element={<PopoverPage />}
+            />
           </Routes>
         </div>
       </div>

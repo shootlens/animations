@@ -18,9 +18,8 @@ const RzButton = ({
     const d = Math.max(buttonClick.clientWidth, buttonClick.clientHeight);
 
     circle.style.width = circle.style.height = `${d}px`;
-
-    circle.style.left = `${e.clientX - buttonClick.offsetLeft - d / 2}px`;
-    circle.style.top = `${e.clientY - buttonClick.offsetTop - d / 2}px`;
+    circle.style.left = `${e.nativeEvent.offsetX - d / 2}px`;
+    circle.style.top = `${e.nativeEvent.offsetY - d / 2}px`;
 
     circle.classList.add("ripple");
     circle.style.backgroundColor = primaryButton
