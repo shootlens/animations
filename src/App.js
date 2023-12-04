@@ -12,11 +12,16 @@ import CardPage from "./pages/card-page.jsx";
 import RzTableComponent from "./pages/table-component-page.jsx";
 import HeaderPage from "./pages/header-page.jsx";
 import FooterPage from "./pages/footer-page.jsx";
-import TicketRequesterProfilePage from "./pages/ticket-requester-profile-page.jsx"
+import TicketRequesterProfilePage from "./pages/ticket-requester-profile-page.jsx";
 import BreadcrumbPage from "./pages/breadcrumb-page.jsx";
-import SearchPage from"./pages/search-page.jsx";
+import SearchPage from "./pages/search-page.jsx";
 import PopoverPage from "./pages/popover-page.jsx";
-
+import MulticolSortPage from "./pages/multicolumn-sort-page.jsx";
+import ListingPage from "./pages/listing-page.jsx";
+import AccordionPage from "./pages/accordion-page.jsx";
+import PulseAnimationButtonPage from "./pages/pulse-animation-page.jsx";
+import WatcherPage from "./pages/watcher-page.jsx";
+import MulticolFilterPage from "./pages/multicolumn-filter-page.jsx";
 
 function App() {
   return (
@@ -46,17 +51,23 @@ function App() {
               path="/ticket-requester-profile-page"
               element={<TicketRequesterProfilePage />}
             />
-              <Route
-              path="/breadcrumb-page"
-              element={<BreadcrumbPage />}
-            />
+            <Route path="/breadcrumb-page" element={<BreadcrumbPage />} />
+            <Route path="/search-page" element={<SearchPage />} />
+            <Route path="/popover-page" element={<PopoverPage />} />
             <Route
-              path="/search-page"
-              element={<SearchPage />}
+              path="/multicolumn-sort-page"
+              element={<MulticolSortPage />}
             />
-             <Route
-              path="/popover-page"
-              element={<PopoverPage />}
+            <Route path="/listing-page" element={<ListingPage />} />
+            <Route path="/accordion-page" element={<AccordionPage />} />
+            <Route
+              path="/pulse-animation-button-page"
+              element={<PulseAnimationButtonPage />}
+            />
+            <Route path="/watcher-page" element={<WatcherPage />} />
+            <Route
+              path="/multicolumn-filter-page"
+              element={<MulticolFilterPage />}
             />
           </Routes>
         </div>

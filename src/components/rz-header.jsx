@@ -5,7 +5,7 @@ import {
   Cog8ToothIcon,
   PowerIcon,
 } from "@heroicons/react/24/outline";
-import Popover from "./rz-popover";
+import RzPopoverMenu from "./rz-popover-menu";
 import RzAvatar from "./rz-avatar";
 
 const RzHeader = () => {
@@ -38,7 +38,7 @@ const RzHeader = () => {
             <BellIcon className="text-[#13452F] w-6 h-6" />
           </div>
           <div>
-            <Popover
+            <RzPopoverMenu
               title={
                 <div className="flex items-center">
                   <div className="me-[10px]">

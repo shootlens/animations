@@ -18,8 +18,7 @@ import {
 import RzStatusChip from "../components/rz-status-chip";
 import RzAvatar from "../components/rz-avatar";
 import RzPriorityChip from "../components/rz-priority-chip";
-import RzPopover from "../components/rz-popover";
-// import RzPopover from "../components/rz-popover";
+import RzPopoverMenu from "../components/rz-popover-menu";
 
 const RzTableComponent = () => {
   const people = [
@@ -63,6 +62,24 @@ const RzTableComponent = () => {
       name: "Lindsay Walton",
       image:
         "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  ];
+
+  const Statuses = [
+    {
+      title: "Assign",
+      backgroundColor: "#F7E9CE",
+      textColor: "#E79B04",
+    },
+    {
+      title: "Deafult",
+      backgroundColor: "#2AC76933",
+      textColor: "#41A1A4",
+    },
+    {
+      title: "Admin User",
+      backgroundColor: "#C4C4C433",
+      textColor: "#617182",
     },
   ];
 
@@ -142,7 +159,7 @@ const RzTableComponent = () => {
                 </div>
               </div>
               <div className="border-[#DBDDE0] p-1 rounded-[5px] border flex items-center justify-center">
-                <RzPopover
+                <RzPopoverMenu
                   items={items}
                   titleIcon={false}
                   customIcon={
@@ -158,7 +175,7 @@ const RzTableComponent = () => {
                 <ArrowPathIcon className="w-6 h-6 text-[#94A3B8]" />
               </div>
               <div className="max-w-[133px] rounded-[5px] border border-[#DBDDE0] p-1">
-                <RzPopover
+                <RzPopoverMenu
                   items={items}
                   multiselect={true}
                   mulriselectTitle="Column"
@@ -317,15 +334,16 @@ const RzTableComponent = () => {
                       <div className="whitespace-nowrap">{person.name}</div>
                     </td>
 
-                    <td className="text-start  px-4">
-                      <RzStatusChip title="Assign" />
-                    </td>
-                    <td className="text-start px-4  ">
-                      <RzStatusChip title="Default" />
-                    </td>
-                    <td className="text-start  px-4">
-                      <RzStatusChip title="Admin User" />
-                    </td>
+                    {Statuses.map((e) => (
+                      <td className="text-start  px-4" key={e.title}>
+                        <RzStatusChip
+                          title={e.title}
+                          backgroundColor={e.backgroundColor}
+                          textColor={e.textColor}
+                        />
+                      </td>
+                    ))}
+
                     <td className="text-start whitespace-nowrap px-4">
                       <div className="flex items-center">
                         <ArrowTrendingDownIcon className="h-5 w-5 mx-2 text-red-600 font-medium" />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const RzAvatar = ({ imgUrl, firstName }) => {
+const RzAvatar = ({ imgUrl, firstName, customRadius }) => {
   const [randomColor, setRandomColor] = useState(generateRandomColor());
   const [imgError, setImgError] = useState(false);
 
@@ -20,9 +20,11 @@ const RzAvatar = ({ imgUrl, firstName }) => {
   return (
     <div>
       <div
-        className={`h-8 w-8 rounded-full flex items-center justify-center`}
+        className={`rounded-full flex items-center justify-center`}
         style={{
           backgroundColor: imgUrl & !imgError ? "transparent" : randomColor,
+          width: customRadius ? customRadius : "32px",
+          height: customRadius ? customRadius : "32px",
         }}
       >
         {imgUrl && !imgError ? (

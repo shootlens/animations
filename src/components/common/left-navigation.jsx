@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "./rz-accordion";
+import Accordion from "./accordion";
 
 const LeftNavigation = () => {
   const accordionItems = [
@@ -13,6 +13,10 @@ const LeftNavigation = () => {
         { text: "Notification", path: "./notification-page" },
         { text: "Dropdown", path: "/dropdown-page" },
         { text: "Table", path: "/table-page" },
+        {
+          text: "Pulse Animation Button",
+          path: "/pulse-animation-button-page",
+        },
       ],
     },
     {
@@ -29,6 +33,11 @@ const LeftNavigation = () => {
         { text: "Breadcrumb", path: "/breadcrumb-page" },
         { text: "Search", path: "/search-page" },
         { text: "Popover", path: "/popover-page" },
+        { text: "Multi-column sort", path: "/multicolumn-sort-page" },
+        { text: "Listing", path: "/listing-page" },
+        { text: "Accordion", path: "/accordion-page" },
+        { text: "Watchers", path: "/watcher-page" },
+        { text: "Multi-column filter", path: "/multicolumn-filter-page" },
       ],
     },
   ];

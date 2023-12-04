@@ -6,9 +6,9 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-const RzPopover = ({
+const RzPopoverMenu = ({
   title,
-  titleIcon,
+  hideTitleIcon,
   items,
   multiselect,
   customIcon,
@@ -54,7 +54,7 @@ const RzPopover = ({
             {title}
           </div>
         )}
-        {titleIcon !== false && !customIcon && (
+        {hideTitleIcon !== true && !customIcon && (
           <ChevronDownIcon
             className={`h-5 w-5 text-[#94A3B8]  ${
               isOpen
@@ -63,7 +63,7 @@ const RzPopover = ({
             }`}
           />
         )}
-        {customIcon && !titleIcon && (
+        {customIcon && !hideTitleIcon && (
           <div className="items-center justify-center flex">{customIcon}</div>
         )}
       </button>
@@ -114,7 +114,9 @@ const RzPopover = ({
                         type="checkbox"
                         className="h-4 w-4 text-blue-500"
                       />
-                      <div className="text-sm not-italic">{item.label}</div>
+                      <div className="text-sm text-[#6B7280] not-italic">
+                        {item.label}
+                      </div>
                     </div>
                   )}
                   {!multiselect && (
@@ -133,9 +135,9 @@ const RzPopover = ({
   );
 };
 
-RzPopover.propTypes = {
+RzPopoverMenu.propTypes = {
   title: PropTypes.element,
-  titleIcon: PropTypes.bool,
+  hideTitleIcon: PropTypes.bool,
   customIcon: PropTypes.element,
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -147,4 +149,4 @@ RzPopover.propTypes = {
   multiselect: PropTypes.bool,
 };
 
-export default RzPopover;
+export default RzPopoverMenu;
