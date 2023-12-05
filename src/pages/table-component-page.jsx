@@ -19,6 +19,8 @@ import RzStatusChip from "../components/rz-status-chip";
 import RzAvatar from "../components/rz-avatar";
 import RzPriorityChip from "../components/rz-priority-chip";
 import RzPopoverMenu from "../components/rz-popover-menu";
+import { useState } from "react";
+import MulticolFilter from "../components/rz-multicol-filter";
 
 const RzTableComponent = () => {
   const people = [
@@ -136,6 +138,10 @@ const RzTableComponent = () => {
     },
   ];
 
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const openSidebar = () => setSidebarOpen(true);
+  const closeSidebar = () => setSidebarOpen(false);
+
   return (
     <>
       <div className="max-w-6xl rounded-md w-full mt-9 overflow-auto mx-auto max-h-fit">
@@ -159,14 +165,19 @@ const RzTableComponent = () => {
                 </div>
               </div>
               <div className="border-[#DBDDE0] p-1 rounded-[5px] border flex items-center justify-center">
-                <RzPopoverMenu
+                {/* <RzPopoverMenu
                   items={items}
                   titleIcon={false}
                   customIcon={
                     <AdjustmentsVerticalIcon className="w-6 h-6 text-[#94A3B8]" />
                   }
                   divider={true}
+                /> */}
+                <AdjustmentsVerticalIcon
+                  className="w-6 h-6 text-[#94A3B8]"
+                  onClick={openSidebar}
                 />
+                <MulticolFilter isOpen={isSidebarOpen} onClose={closeSidebar} />
               </div>
               <div className="border-[#DBDDE0] p-1 rounded-[5px] border">
                 <ChevronUpDownIcon className="w-6 h-6 text-[#94A3B8]" />

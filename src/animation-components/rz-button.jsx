@@ -36,7 +36,7 @@ const RzButton = ({
   };
   return (
     <button
-      className={`ripple-button font-normal leading-noraml not-italic text-sm py-[6px] m-2 overflow-hidden relative 
+      className={`ripple-button font-normal leading-noraml not-italic text-sm py-[6px] overflow-hidden relative 
         ${IconComponent ? "px-[10px] flex flex-nowrap items-center" : "px-7"}
       ${
         primaryButton

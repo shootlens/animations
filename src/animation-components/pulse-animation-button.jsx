@@ -1,14 +1,12 @@
 import "../styles/rz-pulse-animation.css";
-const PulseAnimationButton = () => {
+const PulseAnimationButton = ({ title }) => {
   return (
     <>
-      <div className="flex justify-between">
-        <button className="pulse-animation-button">Processing...</button>
-        <button className="pulse-green-button">Processing...</button>
-      </div>
-      <div className="flex justify-between mt-36">
-        <button className="pulse-red-button">Processing...</button>
-        <button className="pulse-gray-button">Processing...</button>
+      <div class="button1">
+        <div class="circle-ripple"></div>
+        <div className="text-xs not-italic font-normal text-[#6B7280]">
+          {title || "buttonText"}
+        </div>
       </div>
     </>
   );

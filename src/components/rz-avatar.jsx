@@ -35,8 +35,8 @@ const RzAvatar = ({ imgUrl, firstName, customRadius }) => {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="text-center capitalize flex text-white">
-            {firstName !== null ? firstName.charAt(0) : ""}
+          <div className="text-center uppercase  flex text-white">
+            {firstName !== null ? firstName.substring(0, 2) : ""}
           </div>
         )}
       </div>

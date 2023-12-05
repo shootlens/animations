@@ -21,7 +21,7 @@ const RzTabs = ({ tabs }) => {
   return (
     <>
       <div className=" mt-8 flex flex-col">
-        <div className="flex justify-evenly bg-gray-300 rounded-[10px]">
+        <div className="flex justify-evenly bg-[#F2F3F4] rounded-[10px]">
           {tabs.map((tab, index) => (
             <Tab
               key={index}

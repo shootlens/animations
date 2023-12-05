@@ -38,6 +38,7 @@ const LeftNavigation = () => {
         { text: "Accordion", path: "/accordion-page" },
         { text: "Watchers", path: "/watcher-page" },
         { text: "Multi-column filter", path: "/multicolumn-filter-page" },
+        { text: "Live-chat-card page", path: "/live-chat-card-page" },
       ],
     },
   ];

@@ -22,6 +22,7 @@ import AccordionPage from "./pages/accordion-page.jsx";
 import PulseAnimationButtonPage from "./pages/pulse-animation-page.jsx";
 import WatcherPage from "./pages/watcher-page.jsx";
 import MulticolFilterPage from "./pages/multicolumn-filter-page.jsx";
+import LiveChatCardPage from "./pages/live-chat-card-page.jsx"
 
 function App() {
   return (
@@ -68,6 +69,10 @@ function App() {
             <Route
               path="/multicolumn-filter-page"
               element={<MulticolFilterPage />}
+            />
+             <Route
+              path="/live-chat-card-page"
+              element={<LiveChatCardPage />}
             />
           </Routes>
         </div>

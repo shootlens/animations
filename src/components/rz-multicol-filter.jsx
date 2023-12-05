@@ -55,7 +55,6 @@ const MulticolFilter = ({ isOpen, onClose }) => {
     {
       title: "Priority is source is portal",
     },
-    
   ];
 
   const tabsData = [
@@ -159,7 +158,7 @@ const MulticolFilter = ({ isOpen, onClose }) => {
               <RzTabs tabs={tabsData} />
             </div>
           </div>
-          <div className="flex items-center spacex-[23px] justify-end">
+          <div className="flex items-center spacex-[23px] justify-end space-x-[10px]">
             <RzButton buttonText="Clear" secondaryButton />
             <RzButton buttonText="Apply" primaryButton />
           </div>
