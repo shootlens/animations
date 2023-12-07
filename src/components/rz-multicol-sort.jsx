@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/24/outline";
 import RzDropdown from "../animation-components/rz-dropdown";
 import { useState } from "react";
-import RzButton from "../animation-components/rz-button";
+import RzButton from "../animation-components/rz-button-component";
 
 const MulticolSort = () => {
   const [isopen, setisopen] = useState(false);

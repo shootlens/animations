@@ -1,0 +1,45 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#F5F5F5"/>
+<g id="Buttons">
+<rect width="2200" height="2849" transform="translate(-347 -1389)" fill="white"/>
+<g id="Sidebar-allusers">
+<rect x="-262.5" y="-1107.5" width="2037" height="2537" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="user=tenantadmin">
+<g clip-path="url(#clip0_70_21899)">
+<mask id="path-2-inside-1_70_21899" fill="white">
+<path d="M-234 -1078H42V1346H-234V-1078Z"/>
+</mask>
+<path d="M-234 -1078H42V1346H-234V-1078Z" fill="white"/>
+<g id="sidebar-tenant admin">
+<rect width="249" height="2404" transform="translate(-224 -1068)" fill="white"/>
+<g id="Frame 104">
+<g id="Fixed Bar">
+<rect width="250" height="2404" transform="translate(-224 -1068)" fill="white"/>
+<g id="Nav Button Stack">
+<g id="sidebar menu">
+<g id="Primary Links Stack">
+<g id="Sidebar Navigation/Expandable section">
+<g id="Sidebar Navigation/Item">
+<rect x="-219" y="-10" width="243" height="40" rx="6" fill="white"/>
+<g id="Caret">
+<path id="Path" d="M14 6L10 14L6 6L14 6Z" fill="#94A3B8"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<path d="M41 -1078V1346H43V-1078H41Z" fill="#D1D5DB" mask="url(#path-2-inside-1_70_21899)"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_70_21899">
+<path d="M-234 -1078H42V1346H-234V-1078Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

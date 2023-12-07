@@ -15,7 +15,7 @@ import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
 } from "@heroicons/react/24/outline";
-import RzStatusChip from "../components/rz-status-chip";
+import RzStatusChip from "../components/atoms/rz-badge";
 import RzAvatar from "../components/rz-avatar";
 import RzPriorityChip from "../components/rz-priority-chip";
 import RzPopoverMenu from "../components/rz-popover-menu";
@@ -185,11 +185,11 @@ const RzTableComponent = () => {
               <div className="border-[#DBDDE0] p-1 rounded-[5px] border">
                 <ArrowPathIcon className="w-6 h-6 text-[#94A3B8]" />
               </div>
-              <div className="max-w-[133px] rounded-[5px] border border-[#DBDDE0] p-1">
+              <div>
                 <RzPopoverMenu
                   items={items}
                   multiselect={true}
-                  mulriselectTitle="Column"
+                  multiselectTitle="Column"
                   title="Show Fields"
                   titleIcon={true}
                 />

@@ -1,4 +1,4 @@
-import RzInputField from "../animation-components/rz-input-field";
+import RzInputField from "../animation-components/rz-input-field-animation";
 
 const InputFieldPage = () => {
   const code = `

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LeftNavigation from "./components/common/left-navigation";
 import CheckBoxesAndTogglePage from "./pages/checkboxes-toggle-page";
 import ButtonAnimationPage from "./pages/button-page.jsx";
-import InputFieldPage from "./pages/input-field-page";
+import InputFieldAnimationPage from "./pages/input-field-animation-page.jsx";
 import ProgresserPage from "./pages/progresser-page";
 import NotificationPage from "./pages/notification-page";
 import DropdownPage from "./pages/dropdown-page";
@@ -22,12 +22,24 @@ import AccordionPage from "./pages/accordion-page.jsx";
 import PulseAnimationButtonPage from "./pages/pulse-animation-page.jsx";
 import WatcherPage from "./pages/watcher-page.jsx";
 import MulticolFilterPage from "./pages/multicolumn-filter-page.jsx";
-import LiveChatCardPage from "./pages/live-chat-card-page.jsx"
+import LiveChatCardPage from "./pages/live-chat-card-page.jsx";
+import FileUploadPage from "./pages/file-upload-page.jsx";
+import DropdownComponentPage from "./pages/dropdown-component-page.jsx";
+import SelectWithCreateAndEditComponent from "./pages/select-with-create-and-edit.jsx";
+import SelectWithSearchAndAddComponent from "./pages/select-with-search-and-add.jsx";
+import ButtonPageAtoms from "./pages/atoms/button-page-atoms.jsx";
+import CarouselPage from "./pages/carousel-page.jsx";
+import InputFieldPage from "./pages/atoms/input-field-page.jsx";
+import ToggleAndCheckboxPage from "./pages/atoms/toggle-checkbox-page.jsx";
+import BadgesPage from "./pages/atoms/badges-page.jsx";
+import SliderPage from "./pages/atoms/slider-page.jsx";
+import ProgressBarPage from "./pages/atoms/progressbar-page.jsx";
+import ButtonGroupPage from "./pages/atoms/button-group-page.jsx";
 
 function App() {
   return (
     <Router>
-      <div className="flex overflow-hidden">
+      <div className="flex overflow-hidden -z-20">
         <LeftNavigation />
         <div className="flex-1 overflow-hidden">
           <Routes>
@@ -36,7 +48,10 @@ function App() {
               path="/checkboxes-toggle-page"
               element={<CheckBoxesAndTogglePage />}
             />
-            <Route path="/input-field-page" element={<InputFieldPage />} />
+            <Route
+              path="/input-field-animation-page"
+              element={<InputFieldAnimationPage />}
+            />
             <Route path="/progresser-page" element={<ProgresserPage />} />
             <Route path="/notification-page" element={<NotificationPage />} />
             <Route path="/dropdown-page" element={<DropdownPage />} />
@@ -70,10 +85,32 @@ function App() {
               path="/multicolumn-filter-page"
               element={<MulticolFilterPage />}
             />
-             <Route
-              path="/live-chat-card-page"
-              element={<LiveChatCardPage />}
+            <Route path="/live-chat-card-page" element={<LiveChatCardPage />} />
+            <Route path="/file-upload-page" element={<FileUploadPage />} />
+
+            <Route
+              path="/dropdown-component-page"
+              element={<DropdownComponentPage />}
             />
+            <Route
+              path="/select-with-create-and-edit"
+              element={<SelectWithCreateAndEditComponent />}
+            />
+            <Route
+              path="/select-with-search-and-add"
+              element={<SelectWithSearchAndAddComponent />}
+            />
+            <Route path="/button-page-atoms" element={<ButtonPageAtoms />} />
+            <Route path="/carousel-page" element={<CarouselPage />} />
+            <Route path="/input-field-page" element={<InputFieldPage />} />
+            <Route
+              path="/toggle-checkbox-page"
+              element={<ToggleAndCheckboxPage />}
+            />
+            <Route path="/badges-page" element={<BadgesPage />} />
+            <Route path="/slider-page" element={<SliderPage />} />
+            <Route path="/progressbar-page" element={<ProgressBarPage />} />
+            <Route path="/button-group-page" element={<ButtonGroupPage />} />
           </Routes>
         </div>
       </div>

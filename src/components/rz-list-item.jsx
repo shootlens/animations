@@ -83,7 +83,7 @@
 
 import React from "react";
 import { EyeIcon, StarIcon } from "@heroicons/react/24/outline";
-import RzStatusChip from "./rz-status-chip";
+import RzStatusChip from "./atoms/rz-badge";
 import RzBreadCrumb from "./rz-breadcrumb";
 
 const RzStatus = ({ icon, color, value }) => (
@@ -99,7 +99,7 @@ const RzStatus = ({ icon, color, value }) => (
       </div>
     }
     backgroundColor={color}
-    normalChip={true}
+    normalBadge={true}
   />
 );
 

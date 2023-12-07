@@ -7,7 +7,7 @@ import {
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RzAvatar from "../components/rz-avatar";
-import RzButton from "../animation-components/rz-button";
+import RzButton from "../animation-components/rz-button-component";
 
 const RzWatcher = () => {
   const [toggle, setToggle] = useState(false);

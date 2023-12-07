@@ -15,7 +15,7 @@ const RzCheckBox = ({ label, checked }) => {
           <div className="relative inline-flex p-3 rounded-full cursor-pointer">
             <input
               type="checkbox"
-              className="before:content[''] peer relative h-4 w-4 cursor-pointer appearance-none rounded-[4px] border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-9 before:w-9 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#4F46E5] checked:bg-[#4F46E5] checked:before:bg-[#4F46E5] hover:before:opacity-10"
+              className="before:content[''] peer relative h-4 w-4 cursor-pointer rounded-[4px] border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-9 before:w-9 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#4F46E5] checked:bg-[#4F46E5] checked:before:bg-[#4F46E5] hover:before:opacity-10"
               id="checkbox"
               checked={isChecked}
               onChange={handleChange}

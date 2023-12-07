@@ -1,5 +1,5 @@
 import React from "react";
-import RzButton from "../animation-components/rz-button";
+import RzButton from "../animation-components/rz-button-component";
 import {
   ArrowUpTrayIcon,
   WrenchScrewdriverIcon,

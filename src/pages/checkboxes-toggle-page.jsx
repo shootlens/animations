@@ -1,5 +1,5 @@
 import RzCheckBox from "../animation-components/rz-checkbox";
-import RzToggle from "../animation-components/rz-toggle";
+import RzToggle from "../components/atoms/rz-toggle";
 
 const CheckBoxesAndToggle = () => {
   const code = `

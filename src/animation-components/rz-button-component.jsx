@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../styles/rz-button.css";
 
-const RzButton = ({
+const RzButtonRippleComponent = ({
   buttonText,
   buttonClick,
   primaryButton,
@@ -66,7 +66,7 @@ const RzButton = ({
   );
 };
 
-RzButton.propTypes = {
+RzButtonRippleComponent.propTypes = {
   buttonText: PropTypes.string,
   buttonClick: PropTypes.func,
   primaryButton: PropTypes.bool,
@@ -77,4 +77,4 @@ RzButton.propTypes = {
   buttonRadius: PropTypes.string,
 };
 
-export default RzButton;
+export default RzButtonRippleComponent;

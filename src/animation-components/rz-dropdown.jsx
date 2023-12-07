@@ -1,9 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
-const RzDropdown = ({ customizeList, items = [], title }) => {
+const RzDropdown = ({
+  customizeList,
+  items = [],
+  title,
+  isSearchable,
+  addButton,
+  emptyState,
+  additionalContent,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
@@ -12,26 +22,21 @@ const RzDropdown = ({ customizeList, items = [], title }) => {
 
   const handleSelectItem = (item) => {
     setSelectedItem(item);
-    setIsOpen(false);
+    setIsOpen(!isOpen);
   };
 
-  const handleOutsideClick = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
   };
 
   const calculateDropdownWidth = () => {
-    const headerWidth = document.getElementById("dropdown-header")?.offsetWidth;
+    const headerWidth = dropdownRef.current?.offsetWidth;
     return headerWidth ? `${headerWidth}px` : "auto";
   };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
 
   const dropdownVariants = {
     open: { opacity: 1, y: 0 },
@@ -44,19 +49,19 @@ const RzDropdown = ({ customizeList, items = [], title }) => {
   };
 
   const defaultStyles =
-    "py-1 absolute rounded-md w-full  mt-2 list-none bg-white border shadow-sm z-10";
+    "py-1 absolute dropdown-scroll rounded-md w-full mt-2 list-none bg-white border shadow-sm z-10 flex flex-col justify-between";
   const combinedStyles = `${defaultStyles} ${customizeList || ""}`;
 
   return (
     <div style={{ position: "relative" }}>
       <div
-        className={`flex justify-between items-center border-[#D1D5DB] border px-2 rounded-lg py-[3px] max-w-full`}
+        className={`flex justify-between items-center border-[#D1D5DB] border px-2 rounded-md py-[3px] max-w-full bg-white`}
         onClick={toggleDropdown}
         ref={dropdownRef}
         id="dropdown-header"
       >
-        <div className="text-sm font-semibold text-gray-600">
-          {selectedItem ? selectedItem : title ? title : "Dropdown"}
+        <div className="text-sm not-italic font-normal text-[#6B7280]">
+          {selectedItem ? selectedItem : title ? title : "Options"}
         </div>
         <div>
           <motion.svg
@@ -66,9 +71,9 @@ const RzDropdown = ({ customizeList, items = [], title }) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className={`transition-transform duration-75 text-gray-400 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
@@ -82,30 +87,64 @@ const RzDropdown = ({ customizeList, items = [], title }) => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.ul
+          <motion.div
             className={combinedStyles}
             variants={dropdownVariants}
             initial="closed"
             animate="open"
             exit="closed"
             style={{
-              top: "calc(100% + 10px)",
+              position: "relative",
+              maxHeight: "400px",
+              height: "100%",
             }}
           >
-            {items.map((item, index) => (
-              <motion.li
-                style={{ width: calculateDropdownWidth() }}
-                key={index}
-                className={` hover:bg-[#f0f0f0] transition-background duration-100 cursor-pointer text-sm font-normal not-italic px-2 py-1 border-none ${
-                  selectedItem === item ? "bg-gray-100" : ""
-                }`}
-                variants={itemVariants}
-                onClick={() => handleSelectItem(item)}
+            {isSearchable && (
+              <motion.div
+                key="search-input"
+                className="rounded-md mb-1 border border-[#D1D5DB] px-2 mx-2 mt-2"
               >
-                {item}
-              </motion.li>
-            ))}
-          </motion.ul>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="py-0.5 w-full flex-grow"
+                />
+              </motion.div>
+            )}
+            <div className="h-full overflow-y-auto overflow-x-hidden dropdown-scroll">
+              {emptyState ? (
+                <div className="text-center">{additionalContent ?? "empty"}</div>
+              ) : (
+                <div>
+                  {items.map((item, index) => (
+                    <motion.li
+                      style={{ width: calculateDropdownWidth() }}
+                      key={index}
+                      className={` hover:bg-[#f0f0f0] transition-background duration-100 cursor-pointer text-sm not-italic font-normal leading-5 text-[#374151] px-2 border-none flex justify-between items-center ${
+                        selectedItem === item ? "bg-gray-100" : ""
+                      }`}
+                      variants={itemVariants}
+                      onClick={() => handleSelectItem(item)}
+                      onMouseEnter={() => handleMouseEnter(item)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <span className="py-1.5 px-1">{item}</span>
+                      {hoveredItem === item && (
+                        <div
+                          className="inline-flex text-[#2563EB] items-center"
+                          onClick={() => console.log("clicked")}
+                        >
+                          <PencilSquareIcon className="ml-2 w-6 h-6" />
+                          Edit
+                        </div>
+                      )}
+                    </motion.li>
+                  ))}
+                </div>
+              )}
+            </div>
+            <motion.div>{addButton ?? ""}</motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

@@ -25,17 +25,15 @@ const DropdownPage = () => {
       <div className="bg-gray-100 h-screen w-full overflow-auto">
         <div className=" max-w-4xl mx-auto w-full my-9">
           <div className="text-lg font-bold text-gray-700 py-9">Dropdown</div>
-          <div className="max-w-sm justify-center inline-flex px-2 py-1.5 border rounded-md">
-            <RzPopoverMenu
-              title="Popover"
-              items={items}
-              multiselect={false}
-              mulriselectTitle="Column"
-              hideTitleIcon={true}
-              divider={false}
-              customIcon={<HashtagIcon className="w-4 h-4" />}
-            />
-          </div>
+          <RzPopoverMenu
+            title="Popover"
+            items={items}
+            multiselect={false}
+            multiselectTitle="Column"
+            hideTitleIcon={true}
+            divider={false}
+            customIcon={<HashtagIcon className="w-4 h-4" />}
+          />
         </div>
       </div>
     </>

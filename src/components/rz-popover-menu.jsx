@@ -5,15 +5,18 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import RzButton from "../animation-components/rz-button-component";
 
 const RzPopoverMenu = ({
   title,
-  hideTitleIcon,
   items,
   multiselect,
   customIcon,
-  mulriselectTitle,
+  multiselectTitle,
   divider,
+  itemsWithSearch,
+  itemsWithIcon,
+  listTitle,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -42,61 +45,91 @@ const RzPopoverMenu = ({
     return null;
   }
 
+  const renderTitle = () => (
+    <div className="mx-2 text-[#13452F] text-justify text-sm not-italic">
+      {title}
+    </div>
+  );
+
+  const renderListTitle = () => (
+    <div className="px-[12px] py-[8px] text-sm not-italic font-normal leading-5 border-b text-[#111827]">
+      {listTitle}
+    </div>
+  );
+
+  const renderChevronIcon = () => (
+    <ChevronDownIcon
+      className={`h-5 w-5 text-[#94A3B8]  ${
+        isOpen
+          ? "transform rotate-180 duration-300"
+          : "transform rotate-0 duration-300"
+      }`}
+    />
+  );
+
+  const renderCustomIcon = () => (
+    <div className="items-center justify-center flex">{customIcon}</div>
+  );
+
+  const renderSearchInput = () => (
+    <div className="border-[1px] rounded-md flex mx-[10px] items-center mt-[10px]">
+      <input
+        type="text"
+        placeholder="Search"
+        className="border rounded-md py-1 pl-[10px] pr-[10px] focus:outline-none"
+      />
+      <MagnifyingGlassIcon className="w-4 h-4 mr-[10px] text-gray-400 absolute right-[10px]" />
+    </div>
+  );
+
+  const renderMultiselectSearch = () => (
+    <>
+      <div className="flex justify-between my-[10px] pb-[10px] border-b ">
+        <div className="text-black text-sm font-medium mx-[10px] ">
+          {multiselectTitle !== null ? multiselectTitle : ""}
+        </div>
+        <div className="text-[#2563EB] text-xs font-normal leading-normal mx-[10px] ">
+          Restore Default
+        </div>
+      </div>
+      {renderSearchInput()}
+    </>
+  );
+
+  const renderSearch = () => renderSearchInput();
+
   return (
-    <div className="relative inline-block" ref={dropdownRef}>
+    <div
+      className={`relative inline-block ${
+        title ? "border-[#D1D5DB] border bg-white   p-1.5 rounded-[5px]" : ""
+      }`}
+      ref={dropdownRef}
+    >
       <button
         type="button"
         className="flex items-center text-gray-600 focus:outline-none"
         onClick={togglePopover}
       >
-        {title && (
-          <div className="mx-2 text-[#13452F] text-justify text-sm not-italic">
-            {title}
-          </div>
-        )}
-        {hideTitleIcon !== true && !customIcon && (
-          <ChevronDownIcon
-            className={`h-5 w-5 text-[#94A3B8]  ${
-              isOpen
-                ? "transform rotate-180 duration-300"
-                : "transform rotate-0 duration-300"
-            }`}
-          />
-        )}
-        {customIcon && !hideTitleIcon && (
-          <div className="items-center justify-center flex">{customIcon}</div>
-        )}
+        {title && renderTitle()}
+        {!customIcon && renderChevronIcon()}
+        {customIcon && renderCustomIcon()}
       </button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className={`absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg`}
+            className={`absolute right-0 mt-4 w-56 bg-white border border-gray-200 rounded-md shadow-lg`}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             style={{ zIndex: 9999 }}
           >
-            {multiselect && (
-              <>
-                <div className="flex justify-between my-[10px] pb-[10px] border-b ">
-                  <div className="text-black text-sm font-medium mx-[10px] ">
-                    {mulriselectTitle !== null ? mulriselectTitle : ""}
-                  </div>
-                  <div className="text-[#2563EB] text-xs font-normal leading-normal mx-[10px] ">
-                    Restore Default
-                  </div>
-                </div>
-                <div className="border-[1px] rounded-md flex mx-[10px] items-center mt-[10px]">
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="border rounded-md py-1 pl-[10px] pr-[10px] focus:outline-none"
-                  />
-                  <MagnifyingGlassIcon className="w-4 h-4 mr-[10px] text-gray-400 absolute right-[10px]" />
-                </div>
-              </>
-            )}
+            {multiselect && renderMultiselectSearch()}
+
+            {listTitle && renderListTitle()}
+
+            {itemsWithSearch && !multiselect && renderSearch()}
+
             <ul className="py-2">
               {items.map((item, index) => (
                 <li
@@ -122,11 +155,25 @@ const RzPopoverMenu = ({
                   {!multiselect && (
                     <>
                       <div className="text-sm not-italic">{item.label}</div>
-                      <div>{item.icon}</div>
+                      {itemsWithIcon && (
+                        <div
+                          onClick={() =>
+                            item.iconOnClick && item.iconOnClick(item.label)
+                          }
+                          className="text-[#94A3B8] w-6 h-6"
+                        >
+                          {item.icon}
+                        </div>
+                      )}
                     </>
                   )}
                 </li>
               ))}
+              {itemsWithIcon && (
+                <div className="justify-center flex max-w-full">
+                  <RzButton buttonText="Clear Selected" secondaryButton />
+                </div>
+              )}
             </ul>
           </motion.div>
         )}
@@ -136,9 +183,9 @@ const RzPopoverMenu = ({
 };
 
 RzPopoverMenu.propTypes = {
-  title: PropTypes.element,
-  hideTitleIcon: PropTypes.bool,
+  title: PropTypes.string,
   customIcon: PropTypes.element,
+  listTitle: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,

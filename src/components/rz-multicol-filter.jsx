@@ -5,10 +5,10 @@ import {
   TrashIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import RzButton from "../animation-components/rz-button";
+import RzButton from "../animation-components/rz-button-component";
 import RzTabs from "./rz-tabs";
 import RzDropdown from "../animation-components/rz-dropdown";
-import RzStatusChip from "./rz-status-chip";
+import RzStatusChip from "./atoms/rz-badge";
 
 const FilterItem = ({ title }) => {
   return (
@@ -109,7 +109,7 @@ const MulticolFilter = ({ isOpen, onClose }) => {
                 <div className="mx-2 flex">
                   <RzStatusChip
                     backgroundColor="#EDE8FE"
-                    normalChip={false}
+                    normalBadge={false}
                     title="DOT IN"
                     textColor="#8463F9"
                   />

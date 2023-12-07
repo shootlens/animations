@@ -8,8 +8,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import RzLiveChatCard from "../components/rz-live-chat-card";
-import RzToggle from "../animation-components/rz-toggle";
-import RzStatusChip from "../components/rz-status-chip";
+import RzToggle from "../components/atoms/rz-toggle";
+import RzStatusChip from "../components/atoms/rz-badge";
 import { useState } from "react";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
@@ -92,7 +92,7 @@ const LiveChatPage = () => {
               </div>
               <div className="flex space-x-[10px] items-center">
                 <div>
-                  <RzToggle activeColor="bg-[#229F54]" />
+                  <RzToggle activeColor="#229F54" />
                 </div>
                 <div className="text-sm not-italic font-medium text-[#6B7280]">
                   Make yourself available
