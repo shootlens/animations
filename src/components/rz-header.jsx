@@ -48,6 +48,7 @@ const RzHeader = () => {
                 </div>
               }
               items={userItems}
+              customClass="border-none"
             />
           </div>
         </div>

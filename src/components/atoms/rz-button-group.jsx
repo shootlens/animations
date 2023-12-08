@@ -17,6 +17,7 @@ const RzButtonGroup = ({ buttons }) => {
           isIconButton={button.isIconButton}
           isFirst={index === 0}
           isLast={index === buttons.length - 1}
+          isGroup={true}
         />
       ))}
     </div>

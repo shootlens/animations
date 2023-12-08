@@ -10,6 +10,8 @@ const RzButton = ({
   isIconButton = false,
   isFirst,
   isLast,
+  isGroup,
+  buttonRadius,
 }) => {
   const getSizeClasses = () => {
     switch (size) {
@@ -69,14 +71,21 @@ const RzButton = ({
   };
 
   const getBorderRadiusClasses = () => {
-    if (isFirst && isLast) {
-      return "rounded-[5px]";
-    } else if (isFirst) {
-      return "rounded-l-lg border-r-0";
-    } else if (isLast) {
-      return "rounded-r-lg border-l";
+    if (isGroup) {
+      if (isFirst && isLast) {
+        return `rounded-[5px] border`;
+      } else if (isFirst) {
+        return `rounded-l-[5px]  border-r`;
+      } else if (isLast) {
+        return `rounded-r-[5px] border-l`;
+      }
+    } else {
+      return `${buttonRadius ? buttonRadius : "rounded-[5px]"} ${
+        type === "tertiary" ? "border-none" : "border"
+      }`;
     }
-    return "border-r-0";
+
+    return "";
   };
 
   const handleClick = () => {

@@ -49,7 +49,7 @@ const RzDropdown = ({
   };
 
   const defaultStyles =
-    "py-1 absolute dropdown-scroll rounded-md w-full mt-2 list-none bg-white border shadow-sm z-10 flex flex-col justify-between";
+    "py-1 absolute custom-scroll rounded-md w-full mt-2 list-none bg-white border shadow-sm z-10 flex flex-col justify-between";
   const combinedStyles = `${defaultStyles} ${customizeList || ""}`;
 
   return (
@@ -111,7 +111,7 @@ const RzDropdown = ({
                 />
               </motion.div>
             )}
-            <div className="h-full overflow-y-auto overflow-x-hidden dropdown-scroll">
+            <div className="h-full overflow-y-auto overflow-x-hidden custom-scroll">
               {emptyState ? (
                 <div className="text-center">{additionalContent ?? "empty"}</div>
               ) : (

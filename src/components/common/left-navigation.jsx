@@ -65,6 +65,14 @@ const LeftNavigation = () => {
           text: "Progress bar",
           path: "./progressbar-page",
         },
+        {
+          text: "Divider",
+          path: "./divider-page",
+        },
+        {
+          text: "Profile picture",
+          path: "./profile-picture-placeholder-page",
+        },
       ],
     },
     {
@@ -108,13 +116,21 @@ const LeftNavigation = () => {
           text: "Carousel",
           path: "/carousel-page",
         },
+        {
+          text: "Stepper",
+          path: "/stepper-page",
+        },
+        {
+          text: "Grouped Table",
+          path: "/grouped-table-page",
+        },
       ],
     },
   ];
 
   return (
     <div
-      className={`p-4 h-screen overflow-y-auto navigation-bar overflow-x-hidden left-navigation relative border-r border-[#D1D5DB] ${
+      className={`p-4 h-screen overflow-y-auto custom-scroll overflow-x-hidden left-navigation relative border-r border-[#D1D5DB] ${
         isSidenavBarOpen ? "w-1/5" : "w-[69px]"
       }`}
     >

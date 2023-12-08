@@ -5,9 +5,7 @@ const ButtonGroupPage = () => {
     { text: "Button 1", type: "secondary", size: "lg" },
     { text: "Button 2", type: "secondary", size: "lg" },
     { text: "Button 3", type: "secondary", size: "lg" },
-    { text: "Button 1", type: "secondary", size: "lg" },
-    { text: "Button 2", type: "secondary", size: "lg" },
-    { text: "Button 3", type: "secondary", size: "lg" },
+    
   ];
   const Disabledbuttons = [
     { text: "Button 1", type: "disabled", size: "lg" },

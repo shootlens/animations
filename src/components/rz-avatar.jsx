@@ -20,7 +20,7 @@ const RzAvatar = ({ imgUrl, firstName, customRadius }) => {
   return (
     <div>
       <div
-        className={`rounded-full flex items-center justify-center`}
+        className={`rounded-full flex items-center justify-center relative`}
         style={{
           backgroundColor: imgUrl & !imgError ? "transparent" : randomColor,
           width: customRadius ? customRadius : "32px",

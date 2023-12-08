@@ -17,6 +17,7 @@ const RzPopoverMenu = ({
   itemsWithSearch,
   itemsWithIcon,
   listTitle,
+  customClass
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -100,8 +101,14 @@ const RzPopoverMenu = ({
 
   return (
     <div
-      className={`relative inline-block ${
-        title ? "border-[#D1D5DB] border bg-white   p-1.5 rounded-[5px]" : ""
+      className={`relative inline-block${
+        customClass
+          ? customClass
+          : ` ${
+              title
+                ? "border-[#D1D5DB] border bg-white p-1.5 rounded-[5px]"
+                : ""
+            }`
       }`}
       ref={dropdownRef}
     >
@@ -183,7 +190,7 @@ const RzPopoverMenu = ({
 };
 
 RzPopoverMenu.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.element,
   customIcon: PropTypes.element,
   listTitle: PropTypes.string,
   items: PropTypes.arrayOf(

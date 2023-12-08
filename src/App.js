@@ -35,6 +35,10 @@ import BadgesPage from "./pages/atoms/badges-page.jsx";
 import SliderPage from "./pages/atoms/slider-page.jsx";
 import ProgressBarPage from "./pages/atoms/progressbar-page.jsx";
 import ButtonGroupPage from "./pages/atoms/button-group-page.jsx";
+import DividerPage from "./pages/atoms/divider-page.jsx";
+import ProfilePicturePlaceholderPage from "./pages/atoms/profile-picture-placeholder-page.jsx";
+import StepperPage from "./pages/atoms/stepper-page.jsx";
+import GroupedTablePage from "./pages/grouped-table-page.jsx";
 
 function App() {
   return (
@@ -111,6 +115,13 @@ function App() {
             <Route path="/slider-page" element={<SliderPage />} />
             <Route path="/progressbar-page" element={<ProgressBarPage />} />
             <Route path="/button-group-page" element={<ButtonGroupPage />} />
+            <Route path="/divider-page" element={<DividerPage />} />
+            <Route
+              path="/profile-picture-placeholder-page"
+              element={<ProfilePicturePlaceholderPage />}
+            />
+            <Route path="/stepper-page" element={<StepperPage />} />
+            <Route path="/grouped-table-page" element={<GroupedTablePage />} />
           </Routes>
         </div>
       </div>
