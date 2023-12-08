@@ -10,6 +10,7 @@ const RzDropdown = ({
   addButton,
   emptyState,
   additionalContent,
+  hideEditIcon = true,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -94,9 +95,7 @@ const RzDropdown = ({
             animate="open"
             exit="closed"
             style={{
-              position: "relative",
-              maxHeight: "400px",
-              height: "100%",
+              maxHeight: "300px",
             }}
           >
             {isSearchable && (
@@ -113,7 +112,9 @@ const RzDropdown = ({
             )}
             <div className="h-full overflow-y-auto overflow-x-hidden custom-scroll">
               {emptyState ? (
-                <div className="text-center">{additionalContent ?? "empty"}</div>
+                <div className="text-center">
+                  {additionalContent ?? "empty"}
+                </div>
               ) : (
                 <div>
                   {items.map((item, index) => (
@@ -129,7 +130,8 @@ const RzDropdown = ({
                       onMouseLeave={handleMouseLeave}
                     >
                       <span className="py-1.5 px-1">{item}</span>
-                      {hoveredItem === item && (
+
+                      {hideEditIcon && hoveredItem === item && (
                         <div
                           className="inline-flex text-[#2563EB] items-center"
                           onClick={() => console.log("clicked")}
