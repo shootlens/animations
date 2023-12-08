@@ -1,6 +1,6 @@
 import RzInputField from "../animation-components/rz-input-field-animation";
 
-const InputFieldPage = () => {
+const InputFieldAnimationPage = () => {
   const code = `
   import React, { useState } from "react";
   import { motion, useAnimation } from "framer-motion";
@@ -85,4 +85,4 @@ const InputFieldPage = () => {
     </>
   );
 };
-export default InputFieldPage;
+export default InputFieldAnimationPage;

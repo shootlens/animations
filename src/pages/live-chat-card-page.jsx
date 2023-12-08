@@ -92,7 +92,7 @@ const LiveChatPage = () => {
               </div>
               <div className="flex space-x-[10px] items-center">
                 <div>
-                  <RzToggle activeColor="#229F54" />
+                  <RzToggle activeColor="green" />
                 </div>
                 <div className="text-sm not-italic font-medium text-[#6B7280]">
                   Make yourself available

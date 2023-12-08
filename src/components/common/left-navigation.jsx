@@ -22,7 +22,7 @@ const LeftNavigation = () => {
       items: [
         { text: "Button animation", path: "./button-animation" },
         { text: "CheckBoxes and toggle", path: "/checkboxes-toggle-page" },
-        { text: "Input field", path: "./input-field-page" },
+        { text: "Input field", path: "./input-field-animation-page" },
         { text: "Progress bar", path: "/progresser-page" },
         { text: "Notification", path: "./notification-page" },
         { text: "Dropdown", path: "/dropdown-page" },
