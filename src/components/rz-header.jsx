@@ -47,6 +47,7 @@ const RzHeader = () => {
                   <div className="text-sm font-normal not-italic">Name</div>
                 </div>
               }
+              itemsWithIcon={true}
               items={userItems}
               customClass="border-none"
             />
