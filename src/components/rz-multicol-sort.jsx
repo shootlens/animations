@@ -12,12 +12,57 @@ const MulticolSort = () => {
   const handleopen = () => {
     setisopen(!isopen);
   };
-  const items = ["Queue", "Submitted On", "Domain", "Priority"];
+  const items = [
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+    "Queue",
+    "Submitted On",
+    "Domain",
+    "Priority",
+  ];
   return (
     <>
       <div className="flex justify-center">
         <div className="relative inline-block justify-center">
-          <div className="px-[6px] py-[6px] inline-block rounded-[10px] bg-white border border-[#94A3B8]rounded-[10px]">
+          <div className="px-[6px] py-[6px] inline-block rounded-[10px] bg-white border border-[#94A3B8]">
             <BarsArrowDownIcon
               className="w-[22px] h-[22px] text-[#94A3B8]"
               onClick={handleopen}
@@ -29,7 +74,11 @@ const MulticolSort = () => {
                 <div className="flex-grow flex items-center shrink-0 text-black text-sm not-italic font-normal">
                   Sort By
                   <div className="ml-3 flex-grow me-16">
-                    <RzDropdown items={items} title="Category" />
+                    <RzDropdown
+                      items={items}
+                      title="Category"
+                      hideEditIcon={false}
+                    />
                   </div>
                 </div>
                 <div>
@@ -49,7 +98,11 @@ const MulticolSort = () => {
                 <div className="flex-grow flex items-center shrink-0 text-black text-sm not-italic font-normal">
                   Then By
                   <div className="ml-3 flex-grow me-16">
-                    <RzDropdown items={items} title="Category" />
+                    <RzDropdown
+                      items={items}
+                      title="Category"
+                      hideEditIcon={false}
+                    />
                   </div>
                 </div>
                 <div>

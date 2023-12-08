@@ -1,4 +1,4 @@
-import { FunnelIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 import RzPopoverMenu from "../components/rz-popover-menu";
 
 const DropdownComponentPage = () => {

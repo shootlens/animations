@@ -39,6 +39,7 @@ import DividerPage from "./pages/atoms/divider-page.jsx";
 import ProfilePicturePlaceholderPage from "./pages/atoms/profile-picture-placeholder-page.jsx";
 import StepperPage from "./pages/atoms/stepper-page.jsx";
 import GroupedTablePage from "./pages/grouped-table-page.jsx";
+import DraggableTablePage from "./pages/draggable-table-page.jsx";
 
 function App() {
   return (
@@ -122,6 +123,7 @@ function App() {
             />
             <Route path="/stepper-page" element={<StepperPage />} />
             <Route path="/grouped-table-page" element={<GroupedTablePage />} />
+            <Route path="/draggable-table-page" element={<DraggableTablePage />} />
           </Routes>
         </div>
       </div>

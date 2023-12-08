@@ -8,7 +8,7 @@ const MulticolSortPage = () => {
           <div className="text-lg font-bold text-gray-700 py-9">
             Multicolumn sort
           </div>
-          <MulticolSort />
+          <MulticolSort  />
         </div>
       </div>
     </>

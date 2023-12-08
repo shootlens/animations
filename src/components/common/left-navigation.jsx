@@ -124,6 +124,10 @@ const LeftNavigation = () => {
           text: "Grouped Table",
           path: "/grouped-table-page",
         },
+        {
+          text: "Draggable Table",
+          path: "/draggable-table-page",
+        },
       ],
     },
   ];
