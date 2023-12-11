@@ -123,12 +123,9 @@ export default RzTable;
  `;
   return (
     <>
-      {" "}
       <div className="bg-white h-screen w-full overflow-auto">
         <div className=" max-w-5xl mx-auto w-full my-9">
-          <div className="text-lg font-bold text-gray-700 py-9">
-            Notification
-          </div>
+          <div className="text-lg font-bold text-gray-700 py-9">Table Page</div>
           <div className=" space-x-9 items-center mb-8">
             <RzTable />
           </div>

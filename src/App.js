@@ -40,6 +40,10 @@ import ProfilePicturePlaceholderPage from "./pages/atoms/profile-picture-placeho
 import StepperPage from "./pages/atoms/stepper-page.jsx";
 import GroupedTablePage from "./pages/grouped-table-page.jsx";
 import DraggableTablePage from "./pages/draggable-table-page.jsx";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import MultilevelTablePage from "./pages/multi-level-table-page.jsx";
+import AuditHistoryPage from "./pages/audit-history-page.jsx";
 
 function App() {
   return (
@@ -62,10 +66,7 @@ function App() {
             <Route path="/dropdown-page" element={<DropdownPage />} />
             <Route path="/table-page" element={<TablePage />} />
             <Route path="/card-page" element={<CardPage />} />
-            <Route
-              path="/table-component-page"
-              element={<RzTableComponent />}
-            />
+
             <Route path="/header-page" element={<HeaderPage />} />
             <Route path="/footer-page" element={<FooterPage />} />
             <Route
@@ -123,7 +124,11 @@ function App() {
             />
             <Route path="/stepper-page" element={<StepperPage />} />
             <Route path="/grouped-table-page" element={<GroupedTablePage />} />
-            <Route path="/draggable-table-page" element={<DraggableTablePage />} />
+            <Route
+              path="/multi-level-table-page"
+              element={<MultilevelTablePage />}
+            />
+            <Route path="/audit-history-page" element={<AuditHistoryPage />} />
           </Routes>
         </div>
       </div>

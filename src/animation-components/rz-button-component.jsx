@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "../styles/rz-button.css";
+import { useRef } from "react";
 
 const RzButtonRippleComponent = ({
   buttonText,
@@ -10,33 +11,36 @@ const RzButtonRippleComponent = ({
   icon: IconComponent,
   buttonRadius,
 }) => {
-  const createRipple = (e) => {
-    const buttonClick = e.currentTarget;
-    const circle = document.createElement("div");
-    buttonClick.appendChild(circle);
-
-    const d = Math.max(buttonClick.clientWidth, buttonClick.clientHeight);
-
-    circle.style.width = circle.style.height = `${d}px`;
-    circle.style.left = `${e.nativeEvent.offsetX - d / 2}px`;
-    circle.style.top = `${e.nativeEvent.offsetY - d / 2}px`;
-
-    circle.classList.add("ripple");
-    circle.style.backgroundColor = primaryButton
-      ? "rgba(255, 255, 255, 0.7)"
-      : "#e3f2fd";
-  };
-
   const handleButtonClick = (e) => {
-    createRipple(e);
-
+    addRipple(e);
     if (buttonClick) {
       buttonClick(e);
     }
   };
+
+  const rippleContainerRef = useRef(null);
+
+  const addRipple = (event) => {
+    const rippleContainer = rippleContainerRef.current;
+    const ripple = document.createElement("div");
+    const rect = rippleContainer.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+
+    ripple.classList.add("ripple");
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
+    ripple.addEventListener("animationend", () => {
+      ripple.remove();
+    });
+
+    rippleContainer.appendChild(ripple);
+  };
   return (
     <button
-      className={`ripple-button font-normal leading-noraml not-italic text-sm py-[6px] overflow-hidden relative 
+      ref={rippleContainerRef}
+      className={`ripple-button font-normal leading-noraml not-italic text-sm py-[6px] overflow-hidden relative
         ${IconComponent ? "px-[10px] flex flex-nowrap items-center" : "px-7"}
       ${
         primaryButton

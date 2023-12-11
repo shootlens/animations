@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
 
 input {
   border: none;
@@ -29,8 +25,6 @@ input:focus {
   border: none;
   outline: none;
 }
-
-
 
 .container {
   display: flex;
@@ -59,7 +53,6 @@ input:focus {
   display: block;
 }
 
-
 .custom-scroll::-webkit-scrollbar {
   width: 3px;
   height: 3px;
@@ -69,12 +62,10 @@ input:focus {
   background: #f1f1f1;
 }
 
-
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #2563EB;
+  background: #2563eb;
   border-radius: 100px;
 }
-
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   background: #807f7f;
@@ -85,7 +76,6 @@ input:focus {
   bottom: -38px !important;
 }
 
-
 .grouped-table:nth-child(even) {
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import "../../styles/rz-button.css";
 
 const RzButton = ({
   size = "sm",
@@ -88,16 +89,38 @@ const RzButton = ({
     return "";
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     if (!disabled && type !== "disabled" && onClick) {
+      addRipple(e);
       onClick();
     }
+  };
+
+  const rippleContainerRef = useRef(null);
+
+  const addRipple = (event) => {
+    const rippleContainer = rippleContainerRef.current;
+    const ripple = document.createElement("div");
+    const rect = rippleContainer.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+
+    ripple.classList.add("ripple");
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
+    ripple.addEventListener("animationend", () => {
+      ripple.remove();
+    });
+
+    rippleContainer.appendChild(ripple);
   };
 
   return (
     <>
       <button
-        className={`focus:outline-none text-xs not-italic font-normal flex items-center ${getSizeClasses()} ${getTypeClasses()} ${getBorderRadiusClasses()}`}
+        ref={rippleContainerRef}
+        className={` ripple-button overflow-hidden relative focus:outline-none text-xs not-italic font-normal flex items-center ${getSizeClasses()} ${getTypeClasses()} ${getBorderRadiusClasses()}`}
         onClick={handleClick}
         disabled={disabled}
       >

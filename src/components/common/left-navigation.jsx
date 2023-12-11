@@ -80,10 +80,6 @@ const LeftNavigation = () => {
       titleLeftIcon: <UserIcon />,
       items: [
         { text: "Cards", path: "/card-page" },
-        {
-          text: "Table",
-          path: "/table-component-page",
-        },
         { text: "Header", path: "/header-page" },
         {
           text: "Footer",
@@ -125,8 +121,12 @@ const LeftNavigation = () => {
           path: "/grouped-table-page",
         },
         {
-          text: "Draggable Table",
-          path: "/draggable-table-page",
+          text: "Multi-level Table",
+          path: "/multi-level-table-page",
+        },
+        {
+          text: "Audit history",
+          path: "/audit-history-page",
         },
       ],
     },
