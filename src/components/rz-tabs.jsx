@@ -2,7 +2,7 @@ import { useState } from "react";
 const Tab = ({ title, isActive, onClick }) => {
   return (
     <div
-      className={`w-full mx-2 my-2 py-[5px] text-center rounded-[5px] cursor-pointer text-base text-[#6B7280] not-italic ${
+      className={`w-full mx-2 my-2 py-[5px] px-[13px] text-center rounded-[5px] cursor-pointer text-base text-[#6B7280] not-italic ${
         isActive ? "bg-white " : ""
       }`}
       onClick={onClick}

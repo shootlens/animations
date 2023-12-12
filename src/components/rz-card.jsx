@@ -3,7 +3,7 @@ import RzChip from "./rz-chip";
 
 const RzCard = ({
   workflowCard,
-  iconsList = [],
+  ActionIconsList = [],
   showUsrAvatar,
   showActiveSubscriptions,
   showActions,
@@ -18,7 +18,7 @@ const RzCard = ({
   return (
     <>
       <div
-        className={`border flex-nowrap shrink-0 inline-block w-full max-w-sm mx-3 rounded-[10px] border-gray-300 px-[15px] pt-[15px] pb-[25px] bg-white ${
+        className={`border flex-nowrap shrink-0 inline-block w-full max-w-sm rounded-[10px] border-gray-300 px-[15px] pt-[15px] pb-[25px] bg-white ${
           workflowCard ? "!p-0" : ""
         }`}
       >
@@ -31,8 +31,8 @@ const RzCard = ({
                 </div>
                 {showActions && (
                   <div className="flex items-center text-[#94A3B8] space-x-[10px] shrink-0">
-                    {iconsList.map((iconProps, index) => (
-                      <div key={index} onClick={iconProps.onClick}>
+                    {ActionIconsList.map((iconProps, index) => (
+                      <div key={index} onClick={iconProps.onClick} className="w-5 h-5 text-[#94A3B8] ">
                         {iconProps.icon}
                       </div>
                     ))}

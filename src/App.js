@@ -44,6 +44,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MultilevelTablePage from "./pages/multi-level-table-page.jsx";
 import AuditHistoryPage from "./pages/audit-history-page.jsx";
+import GalleryComponentPage from "./pages/gallery-component-page.jsx";
 
 function App() {
   return (
@@ -129,6 +130,10 @@ function App() {
               element={<MultilevelTablePage />}
             />
             <Route path="/audit-history-page" element={<AuditHistoryPage />} />
+            <Route
+              path="/gallery-component-page"
+              element={<GalleryComponentPage />}
+            />
           </Routes>
         </div>
       </div>

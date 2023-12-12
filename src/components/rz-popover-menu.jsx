@@ -17,7 +17,7 @@ const RzPopoverMenu = ({
   itemsWithSearch,
   itemsWithIcon,
   listTitle,
-  customClass
+  customClass,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -47,7 +47,7 @@ const RzPopoverMenu = ({
   }
 
   const renderTitle = () => (
-    <div className="mx-2 text-[#13452F] text-justify text-sm not-italic">
+    <div className="mx-2 text-[#13452F] text-justify text-sm not-italic whitespace-nowrap">
       {title}
     </div>
   );

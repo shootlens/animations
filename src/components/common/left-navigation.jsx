@@ -128,6 +128,10 @@ const LeftNavigation = () => {
           text: "Audit history",
           path: "/audit-history-page",
         },
+        {
+          text: "Gallery",
+          path: "/gallery-component-page",
+        },
       ],
     },
   ];

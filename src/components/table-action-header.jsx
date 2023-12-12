@@ -1,18 +1,31 @@
-import { useState } from "react";
-import RzDrawer from "../components/rz-drawer";
-import RzButton from "../components/atoms/rz-button";
+import React, { useState } from "react";
 import {
+  MagnifyingGlassIcon,
+  Squares2X2Icon,
+  FunnelIcon,
+  AdjustmentsVerticalIcon,
+  ChevronUpDownIcon,
+  ArrowPathIcon,
+  PlusIcon,
+  BarsArrowDownIcon,
+  BarsArrowUpIcon,
   ArrowLeftCircleIcon,
+  XMarkIcon,
   TrashIcon,
   PencilSquareIcon,
   PlusCircleIcon,
-  XMarkIcon,
+  Bars3Icon,
+  ChevronRightIcon,
+  ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
+import RzPopoverMenu from "./rz-popover-menu";
+import RzTabs from "./rz-tabs";
+import RzDrawer from "./rz-drawer";
+import RzButton from "./atoms/rz-button";
 import RzDropdown from "../animation-components/rz-dropdown";
-import RzBadge from "../components/atoms/rz-badge";
-import RzTabs from "../components/rz-tabs";
+import RzBadge from "./atoms/rz-badge";
 
-const MulticolFilterPage = () => {
+const TableActionHeader = ({ tableTitle }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const openSidebar = () => setSidebarOpen(true);
   const closeSidebar = () => setSidebarOpen(false);
@@ -128,15 +141,68 @@ const MulticolFilterPage = () => {
       ),
     },
   ];
+
+  const ShowField = [
+    {
+      label: "Queue",
+      onClick: (label) => console.log(`Clicked ${label}`),
+      icon: (
+        <div className="flex">
+          <BarsArrowDownIcon className="w-6 h-6 text-[#94A3B8]" />
+          <BarsArrowUpIcon className="w-6 h-6 text-[#94A3B8]" />
+        </div>
+      ),
+    },
+  ];
   return (
     <>
-      <div className="bg-gray-100 h-screen w-full overflow-auto">
-        <div className=" max-w-3xl mx-auto w-full my-9">
-          <div className="text-lg font-bold text-gray-700 py-9">
-            Multi-column filter
+      <div className="bg-white flex  items-center justify-between  mx-8 my-[18px]">
+        <div className="text-base whitespace-nowrap me-4 font-medium leading-normal">
+          {tableTitle ?? ""}
+        </div>
+
+        <div>
+          <div
+            className="md:hidden border rounded-md p-1"
+            onClick={openSidebar}
+          >
+            <Bars3Icon className="w-5 h-5 text-gray-700" />
           </div>
-          <div>
-            <div onClick={openSidebar}>Click here</div>
+          <RzDrawer
+            isOpen={isSidebarOpen}
+            onClose={closeSidebar}
+            header={
+              <div onClick={closeSidebar} className="flex items-center">
+                <div className="p-1 rounded-md border inline-flex mx-2">
+                  <ArrowLeftIcon className="text-blue-900 w-6 h-6" />
+                </div>
+                Table Filters
+              </div>
+            }
+          />
+        </div>
+
+        <div className="md:flex hidden  items-center space-x-[10px]">
+          <div className="border-[#DBDDE0] p-1 rounded-[5px] border">
+            <Squares2X2Icon className="w-6 h-6 text-[#94A3B8]" />
+          </div>
+          <div className="max-w-[270px] whitespace-nowrap rounded-[5px] border border-[#DBDDE0] flex items-center px-[15px]">
+            <div>
+              <input
+                type="text"
+                className="w-full h-8 rounded-[5px] text-sm text-[#6B7280] border-none active:bg-none active:border-none"
+                placeholder="Assigned Tickets"
+              />
+            </div>
+            <div>
+              <FunnelIcon className="w-[18px] h-[18px] text-[#617182]" />
+            </div>
+          </div>
+          <div className="border-[#DBDDE0] p-1 rounded-[5px] border flex items-center justify-center">
+            <AdjustmentsVerticalIcon
+              className="w-6 h-6 text-[#94A3B8]"
+              onClick={openSidebar}
+            />
             <RzDrawer
               isOpen={isSidebarOpen}
               onClose={closeSidebar}
@@ -157,23 +223,49 @@ const MulticolFilterPage = () => {
                 </div>
               }
               footer={[
-                <RzButton
-                  size="lg"
-                  text="Clear"
-                  type="secondary"
-                  onClick={() => console.log("cancel clicked")}
-                />,
-                <RzButton
-                  size="lg"
-                  text="Apply"
-                  onClick={() => console.log("apply clicked")}
-                />,
+                <RzButton size="md" text="Clear" type="secondary" />,
+                <RzButton size="md" text="Apply" />,
               ]}
             />
+          </div>
+          <div className="border-[#DBDDE0] p-1 rounded-[5px] border">
+            <ChevronUpDownIcon className="w-6 h-6 text-[#94A3B8]" />
+          </div>
+          <div className="border-[#DBDDE0] p-1 rounded-[5px] border">
+            <ArrowPathIcon className="w-6 h-6 text-[#94A3B8]" />
+          </div>
+          <div>
+            <RzPopoverMenu
+              items={ShowField}
+              multiselect={true}
+              multiselectTitle="Column"
+              title="Show Fields"
+              titleIcon={true}
+            />
+          </div>
+          <div className="max-w-[270px] rounded-[5px] border border-[#DBDDE0] flex items-center px-[15px]">
+            <div>
+              <input
+                type="text"
+                className="w-full h-8 rounded-[5px]"
+                placeholder="Search"
+              />
+            </div>
+            <div>
+              <MagnifyingGlassIcon className="w-[18px] h-[18px] text-[#617182]" />
+            </div>
+          </div>
+          <div className="flex bg-[#2563EB] h-8 text-sm text-white items-center px-[15px] py-1  rounded-[5px]">
+            <div>
+              <PlusIcon className="w-[18px] h-[18px] font-bold mr-[1px] text-white" />
+            </div>
+            <div className="text-white not-italic font-normal leading-[normal]">
+              Create
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 };
-export default MulticolFilterPage;
+export default TableActionHeader;

@@ -144,7 +144,7 @@ const CardPage = () => {
 
   return (
     <>
-      <div className="bg-white h-screen w-full overflow-auto">
+      <div className="bg-white h-screen w-full overflow-auto custom-scroll">
         <div className="w-full max-w-5xl mx-auto my-9">
           <div className="text-lg font-bold text-gray-700 py-9">Card</div>
           <div className="flex justify-between pb-6">
@@ -153,7 +153,7 @@ const CardPage = () => {
               titleIcon={<UserGroupIcon className="w-5 h-5 text-gray-500" />}
               description="This release focuses on visual improvement of existing cards in the password reset flow; and introduces a new flow to automate O365 license allocation"
             />
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto px-4 mx-6">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll px-4 mx-6">
               <pre>
                 <code>{normalCard}</code>
               </pre>
@@ -165,9 +165,9 @@ const CardPage = () => {
               titleIcon={<UserGroupIcon className="w-5 h-5 text-gray-500" />}
               description="This release focuses on visual improvement of existing cards in the password reset flow; and introduces a new flow to automate O365 license allocation"
               showActions={true}
-              iconsList={iconsList}
+              ActionIconsList={iconsList}
             />
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[230px] px-4 mx-6">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[230px] px-4 mx-6">
               <pre>
                 <code>{normalCardWithActions}</code>
               </pre>
@@ -180,9 +180,9 @@ const CardPage = () => {
               description="This release focuses on visual improvement of existing cards in the password reset flow; and introduces a new flow to automate O365 license allocation"
               showUsrAvatar={true}
               showActions={true}
-              iconsList={iconsList}
+              ActioniIconsList={iconsList}
             />
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[230px] px-4 mx-6">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[230px] px-4 mx-6">
               <pre>
                 <code>{normalCardWithAvatar}</code>
               </pre>
@@ -195,9 +195,9 @@ const CardPage = () => {
               description="This release focuses on visual improvement of existing cards in the password reset flow; and introduces a new flow to automate O365 license allocation"
               showActiveSubscriptions={true}
               showActions={true}
-              iconsList={iconsList}
+              ActionIconsList={iconsList}
             />
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[230px] px-4 mx-6">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[230px] px-4 mx-6">
               <pre>
                 <code>{normalCardWithSubscriptions}</code>
               </pre>
@@ -216,7 +216,7 @@ const CardPage = () => {
               workflowActionsList={workflowActionsList}
             />
 
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[190px] px-4 mx-6">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[190px] px-4 mx-6">
               <pre>
                 <code>{workflowCard}</code>
               </pre>
@@ -227,7 +227,7 @@ const CardPage = () => {
               title="Create a new database"
               databaseCard={true}
             />
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[190px] px-4 mx-8">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[190px] px-4 mx-8">
               <pre>
                 <code>{emptyStateCard}</code>
               </pre>
@@ -236,7 +236,7 @@ const CardPage = () => {
           <div className="flex justify-between pb-6 mx-4">
             <RzEmptyStateCard title="Create a new database" />
 
-            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto max-h-[190px] px-4 mx-8">
+            <div className="bg-gray-700 w-full rounded-md text-gray-200 max-w-5xl overflow-auto custom-scroll max-h-[190px] px-4 mx-8">
               <pre>
                 <code>{surveyCard}</code>
               </pre>
