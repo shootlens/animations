@@ -136,6 +136,10 @@ const LeftNavigation = () => {
           text: "Smart Ticket History",
           path: "/smart-ticket-history-page",
         },
+        {
+          text: "Save to page",
+          path: "/save-to-page",
+        },
       ],
     },
   ];

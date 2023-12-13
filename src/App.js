@@ -42,6 +42,7 @@ import MultilevelTablePage from "./pages/multi-level-table-page.jsx";
 import AuditHistoryPage from "./pages/audit-history-page.jsx";
 import GalleryComponentPage from "./pages/gallery-component-page.jsx";
 import SmartTicketHistoryPage from "./pages/smart-ticket-history-page.jsx";
+import SaveToPage from "./pages/save-to-page.jsx";
 
 function App() {
   return (
@@ -134,6 +135,10 @@ function App() {
             <Route
               path="/smart-ticket-history-page"
               element={<SmartTicketHistoryPage />}
+            />
+            <Route
+              path="/save-to-page"
+              element={<SaveToPage />}
             />
           </Routes>
         </div>
