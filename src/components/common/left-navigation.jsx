@@ -125,12 +125,16 @@ const LeftNavigation = () => {
           path: "/multi-level-table-page",
         },
         {
+          text: "Gallery",
+          path: "/gallery-component-page",
+        },
+        {
           text: "Audit history",
           path: "/audit-history-page",
         },
         {
-          text: "Gallery",
-          path: "/gallery-component-page",
+          text: "Smart Ticket History",
+          path: "/smart-ticket-history-page",
         },
       ],
     },

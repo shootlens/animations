@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import PropTypes from "prop-types";
 import {
@@ -17,11 +17,10 @@ const RzTableComponent = ({
   showCheckbox,
   tableContent,
   ColumnHeaders,
+  isSortable,
 }) => {
   const HeaderCell = ({ label, onDragEnd, index }) => {
-    
     const [hoverTimeout, setHoverTimeout] = useState(null);
-
     const [searchBar, setSearchBar] = useState(
       Array.from({ length: columns.length }, () => false)
     );
@@ -97,11 +96,13 @@ const RzTableComponent = ({
             <input type="checkbox" className="h-4 w-4" />
           ) : (
             <>
-              <div className="relative whitespace-nowrap justify-between uppercase w-full items-center px-4 text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
+              <div className="relative  mx-6 whitespace-nowrap justify-between uppercase w-full items-center px-4 text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
                 <div className="flex">
                   {label}
 
-                  <ChevronUpDownIcon className="h-[18px] w-[18px] text-[#94A3B8] px-[2px]" />
+                  {isSortable && (
+                    <ChevronUpDownIcon className="h-[18px] w-[18px] text-[#94A3B8] px-[2px]" />
+                  )}
                 </div>
 
                 {enableColumnSearch && (
@@ -123,7 +124,7 @@ const RzTableComponent = ({
 
   const Rows = ({ rowData, index, columns, onDragEnd }) => {
     const [hoverTimeout, setHoverTimeout] = useState(null);
-  
+
     useEffect(() => {
       return () => {
         if (hoverTimeout) {
@@ -131,7 +132,7 @@ const RzTableComponent = ({
         }
       };
     }, [hoverTimeout]);
-  
+
     const handleHover = useMemo(() => {
       return (draggedItem) => {
         if (hoverTimeout) {
@@ -167,7 +168,7 @@ const RzTableComponent = ({
       >
         {columns.map((column) => (
           <td key={column.label}>
-            <div className="text-start px-4 break-words py-[9px] whitespace-nowrap">
+            <div className="text-start px-4 whitespace-pre py-[9px] mx-6 ">
               {rowData[column.label]}
             </div>
           </td>
@@ -196,31 +197,31 @@ const RzTableComponent = ({
       {tableActions && <TableActionHeader tableTitle={tableTitle} />}
 
       <div className="rounded-md overflow-auto my-8   max-h-[500px] custom-scroll mx-8 border relative custom-scrollx">
-      <table className="w-full rounded-md p-2">
-        <thead className="sticky top-0 bg-[#F9FAFB] text-sm not-italic font-medium leading-normal border-b z-10">
-          <tr className="pt-[14px] pb-[25px] border-[#E2E2E2]">
-            {columns.map((header, index) => (
-              <HeaderCell
-                key={header.label}
-                label={header.label}
-                onDragEnd={handleColumnDrop}
+        <table className="w-full rounded-md p-2">
+          <thead className="sticky top-0 bg-[#F9FAFB] text-sm not-italic font-medium leading-normal border-b z-10">
+            <tr className="pt-[14px] pb-[25px] border-[#E2E2E2]">
+              {columns.map((header, index) => (
+                <HeaderCell
+                  key={header.label}
+                  label={header.label}
+                  onDragEnd={handleColumnDrop}
+                  index={index}
+                />
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((tabledata, index) => (
+              <Rows
+                key={index}
+                rowData={tabledata}
+                onDragEnd={handleRowDrop}
                 index={index}
+                columns={columns}
               />
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((tabledata, index) => (
-            <Rows
-              key={index}
-              rowData={tabledata}
-              onDragEnd={handleRowDrop}
-              index={index}
-              columns={columns}
-            />
-          ))}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
       </div>
     </div>
   );

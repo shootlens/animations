@@ -9,7 +9,6 @@ import NotificationPage from "./pages/notification-page";
 import DropdownPage from "./pages/dropdown-page";
 import TablePage from "./pages/table-page.jsx";
 import CardPage from "./pages/card-page.jsx";
-import RzTableComponent from "./pages/table-component-page.jsx";
 import HeaderPage from "./pages/header-page.jsx";
 import FooterPage from "./pages/footer-page.jsx";
 import TicketRequesterProfilePage from "./pages/ticket-requester-profile-page.jsx";
@@ -39,12 +38,10 @@ import DividerPage from "./pages/atoms/divider-page.jsx";
 import ProfilePicturePlaceholderPage from "./pages/atoms/profile-picture-placeholder-page.jsx";
 import StepperPage from "./pages/atoms/stepper-page.jsx";
 import GroupedTablePage from "./pages/grouped-table-page.jsx";
-import DraggableTablePage from "./pages/draggable-table-page.jsx";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 import MultilevelTablePage from "./pages/multi-level-table-page.jsx";
 import AuditHistoryPage from "./pages/audit-history-page.jsx";
 import GalleryComponentPage from "./pages/gallery-component-page.jsx";
+import SmartTicketHistoryPage from "./pages/smart-ticket-history-page.jsx";
 
 function App() {
   return (
@@ -133,6 +130,10 @@ function App() {
             <Route
               path="/gallery-component-page"
               element={<GalleryComponentPage />}
+            />
+            <Route
+              path="/smart-ticket-history-page"
+              element={<SmartTicketHistoryPage />}
             />
           </Routes>
         </div>
