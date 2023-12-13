@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import { FolderIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftCircleIcon, FolderIcon } from "@heroicons/react/24/outline";
 import ArrowCarrot from "../assets/icons/caret-arrow.svg";
 import TrailLine from "../assets/icons/trail-line.svg";
 import FlatWorkflowIcon from "../assets/icons/flat-color-icons-workflow.svg";
+import RzDrawer from "../components/rz-drawer";
 const SaveToPage = () => {
   const TreeItem = ({ item, level, onToggle }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -108,16 +109,48 @@ const SaveToPage = () => {
       }
     };
 
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const openSidebar = () => setSidebarOpen(true);
+    const closeSidebar = () => setSidebarOpen(false);
     return (
-      <div>
-        {data.map((item) => (
-          <TreeItem
-            key={item.id}
-            item={item}
-            level={0}
-            onToggle={handleToggle}
+      <div className="bg-white h-screen w-full overflow-hidden">
+        <div className="px-4 mx-auto w-full my-9">
+          <div className="text-lg font-bold text-gray-700 py-9">Save to</div>
+          <div className="justify-center flex mt-9">
+            <div
+              className="px-3 p-2 flex rounded-full border cursor-pointer"
+              onClick={openSidebar}
+            >
+              click here
+            </div>
+          </div>
+
+          <RzDrawer
+            isOpen={isSidebarOpen}
+            onClose={closeSidebar}
+            header={
+              <div className="inline-flex cursor-pointer">
+                <ArrowLeftCircleIcon
+                  className="text-[#1E90FF] w-6 h-6 me-2"
+                  onClick={closeSidebar}
+                />
+                Save
+              </div>
+            }
+            content={
+              <div>
+                {data.map((item) => (
+                  <TreeItem
+                    key={item.id}
+                    item={item}
+                    level={0}
+                    onToggle={handleToggle}
+                  />
+                ))}
+              </div>
+            }
           />
-        ))}
+        </div>
       </div>
     );
   };
