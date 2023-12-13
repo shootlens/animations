@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
-import { FolderIcon } from "@heroicons/react/24/outline";
 
+import { FolderIcon } from "@heroicons/react/24/outline";
+import ArrowCarrot from "../assets/icons/caret-arrow.svg";
+import TrailLine from "../assets/icons/trail-line.svg";
+import FlatWorkflowIcon from "../assets/icons/flat-color-icons-workflow.svg";
 const SaveToPage = () => {
   const TreeItem = ({ item, level, onToggle }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +13,17 @@ const SaveToPage = () => {
       onToggle(item.id, !isOpen);
     };
 
+    const hasChildren = item.children && item.children.length > 0;
+
     return (
       <div className="pt-2 relative">
         {level > 0 && (
           <div
-            className="absolute left-4 top-0 bottom-0 bg-gray-400"
+            className="absolute left-4 top-0 bottom-0 bg-[#E4E7EC]"
             style={{
               width: "1px",
               marginLeft: "-1px",
-              transform: `translateX(${level * 10 - 35  }px)`,
+              transform: `translateX(${level * 10 - 35}px)`,
             }}
           ></div>
         )}
@@ -29,19 +33,52 @@ const SaveToPage = () => {
             className="inline-flex items-center cursor-pointer"
             onClick={handleToggle}
           >
-            {isOpen ? (
-              <ChevronDownIcon className="h-4 w-4" />
-            ) : (
-              <ChevronRightIcon className="h-4 w-4" />
+            {level > 0 && (
+              <>
+                <img
+                  src={TrailLine}
+                  alt="trail line"
+                  className="transform duration-300 transition-all   block"
+                />
+              </>
             )}
-            <div className="inline-flex items-center cursor-pointer">
-              <FolderIcon className="text-gray-300 w-5 h-5 me-1" />
-              {item.name}
+            {hasChildren && (
+              <div>
+                {isOpen ? (
+                  <img
+                    src={ArrowCarrot}
+                    alt="arrow-icon"
+                    className="h-4 w-4 transform duration-300"
+                  />
+                ) : (
+                  <img
+                    src={ArrowCarrot}
+                    alt="arrow-icon"
+                    className="h-4 w-4 transform -rotate-90 duration-300"
+                  />
+                )}
+              </div>
+            )}
+            <div className="inline-flex">
+              <div className="inline-flex items-center cursor-pointer">
+                {hasChildren ? (
+                  <FolderIcon className="text-[#98A2B3] w-5 h-5 me-1" />
+                ) : (
+                  <img
+                    src={FlatWorkflowIcon}
+                    alt="workflow-icon"
+                    className="w-5 h-5 me-1"
+                  />
+                )}
+                <span className="text-gray-800 text-sm not-italic font-normal">
+                  {item.name}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {item.children && isOpen && (
+        {hasChildren && isOpen && (
           <div className="ml-4">
             {item.children.map((child, index) => (
               <TreeItem
@@ -73,7 +110,7 @@ const SaveToPage = () => {
 
     return (
       <div>
-        {data.map((item, index) => (
+        {data.map((item) => (
           <TreeItem
             key={item.id}
             item={item}
@@ -88,39 +125,35 @@ const SaveToPage = () => {
   const data = [
     {
       id: 1,
-      name: "Item 1",
+      name: "IT-Service Team",
       children: [
         {
           id: 2,
-          name: "Item 1.1",
+          name: "Software",
           children: [
             {
               id: 3,
-              name: "Item 1.1.1",
+              name: "OS",
               children: [
                 {
                   id: 3,
-                  name: "Item 1.1.1.1",
-                  children: [
-                    {
-                      id: 3,
-                      name: "Item 1.1.1.1.1",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              id: 4,
-              name: "Item 1.1.2",
-              children: [
-                {
-                  id: 7,
-                  name: "Success",
+                  name: "Apps",
                   children: [
                     {
                       id: 1,
-                      name: "ids",
+                      name: "Micrsoft",
+                    },
+                    {
+                      id: 2,
+                      name: "Jira",
+                    },
+                    {
+                      id: 3,
+                      name: "DropBox",
+                    },
+                    {
+                      id: 4,
+                      name: "WorkDay",
                     },
                   ],
                 },
@@ -130,26 +163,18 @@ const SaveToPage = () => {
         },
         {
           id: 5,
-          name: "Item 1.2",
-          children: [
-            {
-              id: 1,
-              name: "sigma",
-              children: [
-                {
-                  id: 1,
-
-                  name: "hi",
-                  children: [
-                    {
-                      id: 3,
-                      name: "Item 1.1.1.1.1",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+          name: "Hardware",
+          children: [{ id: 1, name: "Hardware 1" }],
+        },
+        {
+          id: 5,
+          name: "Services",
+          children: [{ id: 1, name: "service 1" }],
+        },
+        {
+          id: 5,
+          name: "Vendors",
+          children: [{ id: 1, name: "vendor 1" }],
         },
       ],
     },
@@ -183,11 +208,11 @@ const SaveToPage = () => {
               children: [
                 {
                   id: 7,
-                  name: "Success",
+                  name: "Item 1.1.2.1",
                   children: [
                     {
                       id: 1,
-                      name: "ids",
+                      name: "Item 1.1.2.1.1",
                     },
                   ],
                 },
@@ -201,16 +226,16 @@ const SaveToPage = () => {
           children: [
             {
               id: 1,
-              name: "sigma",
+              name: "Item 1.2.1",
               children: [
                 {
                   id: 1,
 
-                  name: "hi",
+                  name: "Item 1.2.1.1",
                   children: [
                     {
                       id: 3,
-                      name: "Item 1.1.1.1.1",
+                      name: "Item 1.2.1.1.1",
                     },
                   ],
                 },
