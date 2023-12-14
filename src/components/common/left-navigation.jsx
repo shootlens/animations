@@ -140,6 +140,10 @@ const LeftNavigation = () => {
           text: "Save to page",
           path: "/save-to-page",
         },
+        {
+          text: "Drag and drop field",
+          path: "/drag-and-drop-form-field-page",
+        },
       ],
     },
   ];
