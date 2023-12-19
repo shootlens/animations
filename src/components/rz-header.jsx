@@ -28,8 +28,7 @@ const RzHeader = () => {
   ];
   return (
     <>
-      <div className="w-full flex justify-between px-5 py-3 bg-white">
-        <div className="content-none"></div>
+      <div className="w-full flex justify-end px-5 py-3 bg-white">
         <div className="flex space-x-4 items-center">
           <div>
             <QuestionMarkCircleIcon className="text-[#13452F] w-6 h-6" />

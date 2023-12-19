@@ -4,16 +4,20 @@ const RzBadge = ({
   textColor,
   normalBadge,
   badgeRadius,
+  size,
 }) => {
+  const isSmall = size === "small";
   return (
     <>
       {title && (
         <div
-          className={`px-3 py-[1px] text-sm font-normal leading-normal  inline-block`}
+          className={`px-${isSmall ? 1 : 3} py-[1px] text-${
+            isSmall ? "xs" : "sm"
+          } font-normal leading-normal inline-block`}
           style={{
-            backgroundColor: !normalBadge ? backgroundColor : "",
+            backgroundColor: backgroundColor ,
             color: textColor ? textColor : backgroundColor,
-            borderColor: backgroundColor,
+            borderColor: textColor,
             border: normalBadge ? "1px solid " : "",
             borderRadius: badgeRadius ? badgeRadius : "4px",
           }}

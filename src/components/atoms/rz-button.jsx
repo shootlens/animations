@@ -124,8 +124,10 @@ const RzButton = ({
         onClick={handleClick}
         disabled={disabled}
       >
-        {icon && <div className={`w-4 h-4 ${getColorClass()}`}>{icon}</div>}
-        {text && <div className="ml-[5px]">{text}</div>}
+        {icon && (
+          <div className={`w-4 h-4 me-[5px] ${getColorClass()}`}>{icon}</div>
+        )}
+        {text && <div>{text}</div>}
       </button>
     </>
   );

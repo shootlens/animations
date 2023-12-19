@@ -45,6 +45,8 @@ import SmartTicketHistoryPage from "./pages/smart-ticket-history-page.jsx";
 import SaveToPage from "./pages/save-to-page.jsx";
 import DragAndDropFieldPage from "./pages/drag-and-drop-form-field-page.jsx";
 import DummyCheck from "./pages/dummy-check.jsx";
+import BotStudioPage from "./pages/bot-studio/bot-studio-page.jsx";
+import OnboardingFlowScreen from "./pages/bot-studio/onboarding-screen.jsx";
 
 function App() {
   return (
@@ -143,9 +145,14 @@ function App() {
               path="/drag-and-drop-form-field-page"
               element={<DragAndDropFieldPage />}
             />
+            <Route path="/dummy-check" element={<DummyCheck />} />
             <Route
-              path="/dummy-check"
-              element={<DummyCheck />}
+              path="/bot-studio/bot-studio-page"
+              element={<BotStudioPage />}
+            />
+            <Route
+              path="/bot-studio/onboarding-screen"
+              element={<OnboardingFlowScreen />}
             />
           </Routes>
         </div>

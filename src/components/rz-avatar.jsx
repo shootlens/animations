@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const RzAvatar = ({ imgUrl, firstName, customRadius }) => {
+const RzAvatar = ({ imgUrl, firstName, customRadius, isSingleLetter }) => {
   const [randomColor, setRandomColor] = useState(generateRandomColor());
   const [imgError, setImgError] = useState(false);
 
@@ -36,7 +36,11 @@ const RzAvatar = ({ imgUrl, firstName, customRadius }) => {
           />
         ) : (
           <div className="text-center uppercase  flex text-white">
-            {firstName !== null ? firstName.substring(0, 2) : ""}
+            {firstName !== null
+              ? isSingleLetter
+                ? firstName.charAt(0)
+                : firstName.substring(0, 2)
+              : ""}
           </div>
         )}
       </div>

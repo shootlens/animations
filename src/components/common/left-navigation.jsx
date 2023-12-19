@@ -144,6 +144,10 @@ const LeftNavigation = () => {
           text: "Drag and drop field",
           path: "/drag-and-drop-form-field-page",
         },
+        {
+          text: "Bot studio page",
+          path: "/bot-studio/bot-studio-page",
+        },
       ],
     },
   ];
