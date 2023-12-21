@@ -28,42 +28,50 @@ const AuditHistoryPage = () => {
       description: "Deployed KiteTail (5c1fd07f in master) to production",
     },
     {
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },{
-        title: "Admin",
-        time: "Timing",
-        description: "Deployed KiteTail (5c1fd07f in master) to production",
-      },
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
+    {
+      title: "Admin",
+      time: "Timing",
+      description: "Deployed KiteTail (5c1fd07f in master) to production",
+    },
   ];
   return (
     <>

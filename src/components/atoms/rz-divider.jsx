@@ -1,7 +1,7 @@
 import { PlusIcon } from "@heroicons/react/24/outline";
 import RzButton from "./rz-button";
 
-const RzDivider = ({ dividertext }) => {
+const RzDivider = ({ dividertext, buttonType }) => {
   return (
     <>
       <div className="relative">
@@ -13,7 +13,7 @@ const RzDivider = ({ dividertext }) => {
             <RzButton
               text={dividertext}
               size="sm"
-              type="secondary"
+              type={buttonType ? buttonType : "secondary"}
               buttonRadius="rounded-full"
               icon={<PlusIcon className="w-4 h-4" />}
             />

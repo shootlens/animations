@@ -285,19 +285,16 @@ const ButtonPageAtoms = () => {
           <div className="icon-buttons">
             <div className="flex justify-between items-center py-7">
               <RzButton
-                isIconButton
                 size="sm"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
               />
               <RzButton
-                isIconButton
                 size="md"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
               />
               <RzButton
-                isIconButton
                 size="md"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
@@ -307,23 +304,23 @@ const ButtonPageAtoms = () => {
           <div className="icon-buttons">
             <div className="flex justify-between items-center py-7">
               <RzButton
-                isIconButton
                 size="sm"
                 disabled
+                type="disabled"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
               />
               <RzButton
-                isIconButton
                 disabled
                 size="md"
+                type="disabled"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
               />
               <RzButton
-                isIconButton
                 disabled
                 size="md"
+                type="disabled"
                 onClick={handleButtonClick}
                 icon={<WrenchScrewdriverIcon />}
               />

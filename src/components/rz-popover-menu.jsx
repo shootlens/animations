@@ -18,6 +18,9 @@ const RzPopoverMenu = ({
   itemsWithIcon,
   listTitle,
   customClass,
+  leftSideIcon,
+  haveClearButton,
+  customTitleClass,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -47,7 +50,9 @@ const RzPopoverMenu = ({
   }
 
   const renderTitle = () => (
-    <div className="mx-2 text-[#13452F] text-justify text-sm not-italic whitespace-nowrap">
+    <div
+      className={`mx-2 text-[#6B7280] text-justify text-sm not-italic whitespace-nowrap ${customTitleClass}`}
+    >
       {title}
     </div>
   );
@@ -59,18 +64,19 @@ const RzPopoverMenu = ({
   );
 
   const renderChevronIcon = () => (
-    <ChevronDownIcon
-      className={`h-5 w-5 text-[#94A3B8]  ${
-        isOpen
-          ? "transform rotate-180 duration-300"
-          : "transform rotate-0 duration-300"
-      }`}
-    />
+    <div className="">
+      {" "}
+      <ChevronDownIcon
+        className={`h-5 w-5 text-[#94A3B8]  ${
+          isOpen
+            ? "transform rotate-180 duration-300"
+            : "transform rotate-0 duration-300"
+        }`}
+      />
+    </div>
   );
 
-  const renderCustomIcon = () => (
-    <div className="items-center justify-center flex">{customIcon}</div>
-  );
+  const renderCustomIcon = () => <div className="">{customIcon}</div>;
 
   const renderSearchInput = () => (
     <div className="border-[1px] rounded-md flex mx-[10px] items-center mt-[10px]">
@@ -101,21 +107,19 @@ const RzPopoverMenu = ({
 
   return (
     <div
-      className={`relative inline-block${
-        customClass
-          ? customClass
-          : ` ${
-              title
-                ? "border-[#D1D5DB] border bg-white p-1.5 rounded-[5px]"
-                : ""
-            }`
+      onClick={togglePopover}
+      className={`relative inline-block cursor-pointer${
+        title
+          ? `border-[#D1D5DB] border bg-white p-1.5 rounded-[5px] ${customClass}`
+          : ""
       }`}
       ref={dropdownRef}
     >
       <button
         type="button"
-        className="flex items-center text-gray-600 focus:outline-none"
-        onClick={togglePopover}
+        className={`flex items-center ${
+          leftSideIcon ? "flex-row-reverse" : ""
+        }`}
       >
         {title && renderTitle()}
         {!customIcon && renderChevronIcon()}
@@ -146,7 +150,9 @@ const RzPopoverMenu = ({
                       ? "flex items-center justify-between"
                       : "hover:bg-gray-100 cursor-pointer flex items-center justify-between"
                   }`}
-                  onClick={() => item.onClick && item.onClick(item.label)}
+                  onClick={() => {
+                    item.onClick && item.onClick(item.label);
+                  }}
                 >
                   {multiselect && (
                     <div className="flex items-center space-x-2">
@@ -176,7 +182,7 @@ const RzPopoverMenu = ({
                   )}
                 </li>
               ))}
-              {itemsWithIcon && (
+              {haveClearButton && (
                 <div className="justify-center flex max-w-full">
                   <RzButton buttonText="Clear Selected" secondaryButton />
                 </div>

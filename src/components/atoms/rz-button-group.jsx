@@ -14,7 +14,6 @@ const RzButtonGroup = ({ buttons }) => {
           onClick={button.onClick}
           text={button.text}
           icon={button.icon}
-          isIconButton={button.isIconButton}
           isFirst={index === 0}
           isLast={index === buttons.length - 1}
           isGroup={true}
@@ -33,7 +32,6 @@ RzButtonGroup.propTypes = {
       onClick: PropTypes.func,
       text: PropTypes.string,
       icon: PropTypes.element,
-      isIconButton: PropTypes.bool,
     })
   ).isRequired,
 };

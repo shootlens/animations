@@ -32,12 +32,12 @@ const BadgesPage = () => {
             />
           </div>
           <div className="flex justify-evenly py-9">
-            <RzBadge
+            {/* <RzBadge
               title="badge"
               textColor="green"
               backgroundColor="green"
               normalBadge={true}
-            />
+            /> */}
             <RzBadge
               title="badge"
               textColor="#CF3626"

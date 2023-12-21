@@ -4,12 +4,21 @@ const RzInput = ({
   error,
   suffixIcon,
   inputType,
-  backgroundcolor,
+  label,
+  optional,
 }) => {
   const showGrayBox = inputType === "url";
   return (
     <>
       <div className="relative">
+        <div className="flex justify-between">
+          <div className="text-sm text-[#374151] font-medium not-italic leading-5">
+            {label ? label : ""}
+          </div>
+          <div className="text-sm text-[#6B7280] font-medium not-italic leading-5">
+            {optional ? optional : ""}
+          </div>
+        </div>
         <div
           className={`max-w-full border  bg-white ${
             error === true ? "border-[#FCA5A5]" : "border-[#D1D5DB]"

@@ -8,7 +8,7 @@ import {
 import RzPopoverMenu from "./rz-popover-menu";
 import RzAvatar from "./rz-avatar";
 
-const RzHeader = () => {
+const RzHeader = ({ leftSideChildren, rightSideChildren }) => {
   const userItems = [
     {
       label: "Profile",
@@ -28,13 +28,15 @@ const RzHeader = () => {
   ];
   return (
     <>
-      <div className="w-full flex justify-end px-5 py-3 bg-white">
-        <div className="flex space-x-4 items-center">
+      <div className="w-full flex items-center justify-between px-5 py-3 bg-white">
+        <div>{leftSideChildren ? leftSideChildren : null}</div>
+        <div className="flex items-center space-x-4">
+          <div>{rightSideChildren ? rightSideChildren : null}</div>
           <div>
-            <QuestionMarkCircleIcon className="text-[#13452F] w-6 h-6" />
+            <QuestionMarkCircleIcon className="text-[#94A3B8] w-6 h-6" />
           </div>
           <div>
-            <BellIcon className="text-[#13452F] w-6 h-6" />
+            <BellIcon className="text-[#94A3B8] w-6 h-6" />
           </div>
           <div>
             <RzPopoverMenu

@@ -47,6 +47,8 @@ import DragAndDropFieldPage from "./pages/drag-and-drop-form-field-page.jsx";
 import DummyCheck from "./pages/dummy-check.jsx";
 import BotStudioPage from "./pages/bot-studio/bot-studio-page.jsx";
 import OnboardingFlowScreen from "./pages/bot-studio/onboarding-screen.jsx";
+import RadioButtonPage from "./pages/atoms/radio-button-page.jsx";
+import TextAreaPage from "./pages/atoms/text-area-page.jsx";
 
 function App() {
   return (
@@ -154,6 +156,8 @@ function App() {
               path="/bot-studio/onboarding-screen"
               element={<OnboardingFlowScreen />}
             />
+            <Route path="/radio-button-page" element={<RadioButtonPage />} />
+            <Route path="/text-area-page" element={<TextAreaPage />} />
           </Routes>
         </div>
       </div>

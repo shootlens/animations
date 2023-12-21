@@ -8,7 +8,12 @@ const SliderPage = () => {
           <div className="text-lg font-bold text-gray-700 py-9">
             Slider page
           </div>
-          <RzSlider />
+          <div className="flex flex-col space-y-48">
+            <RzSlider havingMarks />
+            <RzSlider />
+            <RzSlider rangeSlider value1={20} value2={90} havingMarks />
+            <RzSlider rangeSlider value1={20} value2={90} havingMarks marksValueCount={11}/>
+          </div>
         </div>
       </div>
     </>

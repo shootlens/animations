@@ -50,8 +50,16 @@ const LeftNavigation = () => {
           path: "./input-field-page",
         },
         {
+          text: "Text area",
+          path: "./text-area-page",
+        },
+        {
           text: "Toggle",
           path: "./toggle-checkbox-page",
+        },
+        {
+          text: "Radio Button",
+          path: "./radio-button-page",
         },
         {
           text: "Badges",

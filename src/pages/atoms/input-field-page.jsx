@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 const InputFieldPage = () => {
   return (
     <>
-      <div className="bg-gray-100 h-screen w-full overflow-auto ">
+      <div className="bg-gray-100 h-screen w-full overflow-auto custom-scroll">
         <div className=" max-w-5xl mx-auto w-full my-9">
           <div className="text-lg font-bold text-gray-700 py-9">
             Input field
@@ -13,6 +13,16 @@ const InputFieldPage = () => {
           <div className="flex flex-col space-y-16">
             <div className="w-1/2">
               <RzInput placeholderText="you@example.com" />
+            </div>
+            <div className="w-1/2">
+              <RzInput placeholderText="you@example.com" label="with label" />
+            </div>
+            <div className="w-1/2">
+              <RzInput
+                placeholderText="you@example.com"
+                label="with label"
+                optional="Optional"
+              />
             </div>
             <div className="w-1/2">
               <RzInput helpText="Make your password short and easy to guess." />

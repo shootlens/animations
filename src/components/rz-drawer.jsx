@@ -25,7 +25,7 @@ const RzDrawer = ({
           onClick={onClose}
         ></div>
         <div
-          className={`fixed inset-y-0 ${directionClass} w-full max-w-[551px] bg-white text-gray-800 p-[10px] ${transformClass} transform transition-transform ease-in-out duration-300 z-50 flex flex-col justify-between`}
+          className={`fixed inset-y-0 ${directionClass} w-full max-w-[551px] bg-white text-gray-800 px-[17px] py-[10px]  ${transformClass} transform transition-transform ease-in-out duration-300 z-50 flex flex-col justify-between`}
         >
           <div className="flex flex-col h-full">
             <div>
@@ -34,7 +34,7 @@ const RzDrawer = ({
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 custom-scroll">
+            <div className="flex-1 overflow-y-auto py-4 custom-scroll-gray">
               {content}
             </div>
 
