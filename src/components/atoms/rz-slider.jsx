@@ -1,6 +1,5 @@
 import "toolcool-range-slider/dist/plugins/tcrs-marks.min.js";
 import "toolcool-range-slider/dist/plugins/tcrs-moving-tooltip.min.js";
-
 import "toolcool-range-slider";
 
 const RzSlider = ({

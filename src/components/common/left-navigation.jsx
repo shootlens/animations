@@ -156,6 +156,14 @@ const LeftNavigation = () => {
           text: "Bot studio page",
           path: "/bot-studio/bot-studio-page",
         },
+        {
+          text: "Informative Pop-ups",
+          path: "/informative-popups-page",
+        },
+        {
+          text: "Toast",
+          path: "/toast-page",
+        },
       ],
     },
   ];

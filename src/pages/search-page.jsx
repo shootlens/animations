@@ -1,6 +1,6 @@
 import RzSearch from "../components/rz-search";
 
-const RzSearchPage = () => {
+const RzSearchPage = ({ threshold = 50, setThreshold }) => {
   return (
     <>
       <div className="bg-gray-100 h-screen w-full overflow-auto">

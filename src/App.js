@@ -49,6 +49,8 @@ import BotStudioPage from "./pages/bot-studio/bot-studio-page.jsx";
 import OnboardingFlowScreen from "./pages/bot-studio/onboarding-screen.jsx";
 import RadioButtonPage from "./pages/atoms/radio-button-page.jsx";
 import TextAreaPage from "./pages/atoms/text-area-page.jsx";
+import InformativePopusPage from "./pages/informative-popups-page.jsx";
+import ToastPage from "./pages/toast-page.jsx";
 
 function App() {
   return (
@@ -158,6 +160,11 @@ function App() {
             />
             <Route path="/radio-button-page" element={<RadioButtonPage />} />
             <Route path="/text-area-page" element={<TextAreaPage />} />
+            <Route
+              path="/informative-popups-page"
+              element={<InformativePopusPage />}
+            />
+            <Route path="/toast-page" element={<ToastPage />} />
           </Routes>
         </div>
       </div>

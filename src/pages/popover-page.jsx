@@ -1,5 +1,6 @@
 import { HashtagIcon } from "@heroicons/react/24/outline";
 import RzPopoverMenu from "../components/rz-popover-menu";
+import React from "react";
 
 const DropdownPage = () => {
   const items = [
@@ -20,6 +21,7 @@ const DropdownPage = () => {
       onClick: (label) => console.log(`Clicked ${label}`),
     },
   ];
+
   return (
     <>
       <div className="bg-gray-100 h-screen w-full overflow-auto">
