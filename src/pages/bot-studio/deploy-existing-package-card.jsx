@@ -30,7 +30,7 @@ const DeployExistingPackageCard = () => {
                 textColor="#229F54"
                 backgroundColor="#DFF7E9"
                 normalBadge={true}
-                size="small"
+                size="sm"
               />
             </div>
             <div className="flex space-x-[10px]">
@@ -53,7 +53,7 @@ const DeployExistingPackageCard = () => {
                 title="3 flow"
                 textColor="#8463F9"
                 backgroundColor="#EDE8FE"
-                size="small"
+                size="sm"
                 normalBadge={true}
               />
               <RzAvatar

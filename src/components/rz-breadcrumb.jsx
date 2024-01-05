@@ -35,9 +35,7 @@ const RzBreadCrumb = ({
       {items.map((item, index) => (
         <div className={`flex items-center ${customItemClassName}`} key={index}>
           {index !== 0 && (
-            <ChevronRightIcon
-              className={`w-4 h-4 text-[#6B7280] ${customArrowClassName}`}
-            />
+            <ChevronRightIcon className={`w-4 h-4  !${customArrowClassName}`} />
           )}
           <div className={`pb-[3px] text-sm ${customItemClassName}`}>
             {item}

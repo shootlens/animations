@@ -68,9 +68,7 @@ const RzButton = ({
         return `rounded-r-[5px] border-l`;
       }
     } else {
-      return `${buttonRadius ? buttonRadius : "rounded-[5px]"} ${
-        type === "tertiary" ? "border-none" : "border"
-      }`;
+      return ` ${type === "tertiary" ? "border-none" : "border"}`;
     }
 
     return "";
@@ -110,6 +108,7 @@ const RzButton = ({
         className={` ripple-button overflow-hidden relative focus:outline-none text-xs not-italic font-normal flex items-center ${getSizeClasses()} ${getTypeClasses()} ${getBorderRadiusClasses()}`}
         onClick={handleClick}
         disabled={disabled}
+        style={{ borderRadius: buttonRadius ? buttonRadius : "5px" }}
       >
         {icon && <div className={`w-4 h-4 ${getColorClass()}`}>{icon}</div>}
         {text && <div className=" ml-[5px] text-sm">{text}</div>}

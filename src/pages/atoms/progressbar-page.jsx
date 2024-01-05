@@ -8,7 +8,7 @@ const ProgressBarPage = () => {
           <div className="text-lg font-bold text-gray-700 py-9">
             Progress Bar
           </div>
-          <div>
+          <div className="mb-12">
             <RzProgressBar progressColor="#2563EB" />
           </div>
           <div>

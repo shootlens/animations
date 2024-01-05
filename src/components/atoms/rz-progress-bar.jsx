@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const RzProgressBar = ({ progressColor }) => {
+const RzProgressBar = ({ progressColor, progresserHeight }) => {
   const [progressComplete, setProgressComplete] = useState(false);
   useEffect(() => {
     const progressTimer = setTimeout(() => {
@@ -15,7 +15,8 @@ const RzProgressBar = ({ progressColor }) => {
       <div
         className={`${
           !progressComplete ? "bg-[#F2F3F4]" : "bg-white"
-        } w-80 h-4 relative my-12 rounded-lg`}
+        } relative rounded-lg`}
+        style={{ height: progresserHeight ? progresserHeight : "16px" }}
       >
         <AnimatePresence>
           <motion.div

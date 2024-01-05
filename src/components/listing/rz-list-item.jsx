@@ -83,25 +83,8 @@
 
 import React from "react";
 import { EyeIcon, StarIcon } from "@heroicons/react/24/outline";
-import RzStatusChip from "./atoms/rz-badge";
-import RzBreadCrumb from "./rz-breadcrumb";
-
-const RzStatus = ({ icon, color, value }) => (
-  <RzStatusChip
-    title={
-      <div className="flex items-center">
-        {icon}
-        <div
-          className={`ms-[4px] text-xs font-medium leading-normal text-[${color}]`}
-        >
-          {value}
-        </div>
-      </div>
-    }
-    backgroundColor={color}
-    normalBadge={true}
-  />
-);
+import RzBreadCrumb from "../rz-breadcrumb";
+import RzBadge from "../atoms/rz-badge";
 
 const renderIcons = (actionIconsList) => (
   <div className="flex space-x-1">
@@ -117,29 +100,51 @@ const RzListItem = ({
   actionIconsList = [],
   cardTitle,
   cardDescription,
-  breadcrumbProps= {},
+  breadcrumbProps = {},
 }) => {
   const renderRatings = () => (
     <div className="space-x-2">
-      <RzStatus
-        icon={<EyeIcon className="w-[15px] h-[15px] text-[#2563EB]" />}
-        color="#2563EB"
-        value={32}
+      <RzBadge
+        size="sm"
+        title={
+          <div className="flex items-center space-x-[5px]">
+            <EyeIcon className="w-[18px] h-[18px] text-[#2563EB]" />
+            <div className="text-[#2563EB] text-xs font-medium not-italic leading-normal">
+              37
+            </div>
+          </div>
+        }
+        borderColor="#2563EB"
       />
-      <RzStatus
-        icon={<StarIcon className="w-[15px] h-[15px] text-[#E79B04]" />}
-        color="#E79B04"
-        value="4.8/5"
+
+      <RzBadge
+        title={
+          <div className="flex items-center space-x-[5px]">
+            <StarIcon className="w-[18px] h-[18px] text-[#E79B04]" />
+            <div className="text-[#E79B04] text-xs font-medium not-italic leading-normal">
+              4.8/5
+            </div>
+          </div>
+        }
+        borderColor="#E79B04"
       />
     </div>
   );
 
   return (
-    <div className="bg-white p-4 w-full rounded-[10px] m-1">
+    <div className="bg-white p-4 w-full border-b-[1px]">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
-          <div className="text-sm font-medium not-italic leading-normal">
-            {cardTitle || "title"}
+          <div className="flex items-center">
+            <div className="text-sm font-medium not-italic leading-normal mr-[5px]">
+              {cardTitle || "title"}
+            </div>
+            <RzBadge
+              title="Scripted Answer"
+              textColor="#8463F9"
+              badgeRadius={100}
+              borderColor="#8463F9"
+            />
           </div>
         </div>
         <div className="mx-[5px]">{renderRatings()}</div>

@@ -18,7 +18,7 @@ const FlowComponentsAccordionListCard = () => {
             <RzBadge
               title="Deployed"
               backgroundColor="#DFF7E9"
-              size="small"
+              size="sm"
               textColor="#229F54"
               normalBadge={true}
             />
@@ -41,7 +41,7 @@ const FlowComponentsAccordionListCard = () => {
               title="3 Flow"
               backgroundColor="#EDE8FE"
               textColor="#8463F9"
-              size="small"
+              size="sm"
               normalBadge
             />
             <RzAvatar
