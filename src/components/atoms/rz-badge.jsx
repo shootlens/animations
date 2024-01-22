@@ -4,22 +4,29 @@ const RzBadge = ({
   textColor,
   borderColor,
   badgeRadius,
-  size,
+  horizontalPadding,
+  verticalPadding,
+  textSize,
 }) => {
-  const smallBadge = size === "sm";
+  const defaultHorizontalPadding = "12px";
+  const defaultVerticalPadding = "1px";
+  const defaultTextSize = "14px";
+
   return (
     <>
       {title && (
         <div
-          className={`px-${smallBadge ? 1 : 3} py-[1px] text-${
-            smallBadge ? "xs" : "sm"
-          } font-normal leading-normal inline-block`}
+          className="font-normal leading-normal inline-block"
           style={{
-            backgroundColor: backgroundColor ? backgroundColor : "",
-            color: textColor ? textColor : backgroundColor,
-            borderColor: borderColor,
+            backgroundColor: backgroundColor || "",
+            color: textColor || backgroundColor,
+            borderColor,
             border: borderColor ? `1px solid ${borderColor}` : "",
-            borderRadius: badgeRadius ? badgeRadius : "4px",
+            borderRadius: badgeRadius || "4px",
+            padding: `${verticalPadding || defaultVerticalPadding} ${
+              horizontalPadding || defaultHorizontalPadding
+            }`,
+            fontSize: textSize || defaultTextSize,
           }}
         >
           {title}
