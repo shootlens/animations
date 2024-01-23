@@ -141,8 +141,6 @@ import {
       },
       {
         label: "REQUESTED FOR",
-  
-        handleClick: handleCheckboxClick,
       },
       {
         label: "STATUS",

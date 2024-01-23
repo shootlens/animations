@@ -16,6 +16,7 @@ const RzDivider = ({ dividertext, buttonType }) => {
               type={buttonType ? buttonType : "secondary"}
               buttonRadius="rounded-full"
               icon={<PlusIcon className="w-4 h-4" />}
+            
             />
           </div>
         )}

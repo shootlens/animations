@@ -68,7 +68,9 @@ const RzButton = ({
         return `rounded-r-[5px] border-l`;
       }
     } else {
-      return ` ${type === "tertiary" ? "border-none" : "border"}`;
+      return `${buttonRadius ? buttonRadius : "rounded-[5px]"} ${
+        type === "tertiary" ? "border-none" : "border"
+      }`;
     }
 
     return "";
