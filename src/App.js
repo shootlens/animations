@@ -44,7 +44,6 @@ import GalleryComponentPage from "./pages/gallery-component-page.jsx";
 import SmartTicketHistoryPage from "./pages/smart-ticket-history-page.jsx";
 import SaveToPage from "./pages/save-to-page.jsx";
 import DragAndDropFieldPage from "./pages/drag-and-drop-form-field-page.jsx";
-import DummyCheck from "./pages/dummy-check.jsx";
 import BotStudioPage from "./pages/bot-studio/bot-studio-page.jsx";
 import OnboardingFlowScreen from "./pages/bot-studio/onboarding-screen.jsx";
 import RadioButtonPage from "./pages/atoms/radio-button-page.jsx";
@@ -149,7 +148,6 @@ function App() {
               path="/drag-and-drop-form-field-page"
               element={<DragAndDropFieldPage />}
             />
-            <Route path="/dummy-check" element={<DummyCheck />} />
             <Route
               path="/bot-studio/bot-studio-page"
               element={<BotStudioPage />}
