@@ -96,7 +96,7 @@ const RzTableComponent = ({
             <input type="checkbox" className="h-4 w-4" />
           ) : (
             <>
-              <div className="relative  mx-6 whitespace-nowrap justify-between uppercase w-full items-center px-4 text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
+              <div className="relative whitespace-nowrap justify-between uppercase w-full items-center px-10 text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
                 <div className="flex">
                   {label}
 
