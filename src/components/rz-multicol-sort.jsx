@@ -62,7 +62,7 @@ const MulticolSort = () => {
     <>
       <div className="flex justify-center">
         <div className="relative inline-block justify-center">
-          <div className="px-[6px] py-[6px] inline-block rounded-[10px] bg-white border border-[#94A3B8]">
+          <div className="px-[6px] py-[6px] inline-block rounded-[10px] bg-white border border-[#94A3B8] cursor-pointer">
             <BarsArrowDownIcon
               className="w-[22px] h-[22px] text-[#94A3B8]"
               onClick={handleopen}

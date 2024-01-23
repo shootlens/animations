@@ -106,8 +106,8 @@ const RzWatcher = () => {
                       className="absolute top-0 mt-9"
                       style={{ width: calculateDropdownWidth() }}
                     >
-                      <div className="bg-white border rounded shadow-md p-2 overflow-y-auto">
-                        <div className="flex items-center">
+                      <div className="bg-white border rounded shadow-md  overflow-y-auto  custom-scroll">
+                        <div className="flex items-center p-2">
                           <div className="flex items-center me-[18px]">
                             <input type="radio" className="w-4 h-4 me-3" />
                             <span>To</span>
@@ -118,7 +118,7 @@ const RzWatcher = () => {
                           </div>
                         </div>
 
-                        <div className="max-h-[222px] overflow-auto">
+                        <div className="max-h-[222px] overflow-auto custom-scroll-gray p-2">
                           <div>
                             <div className="flex items-start pt-[18px] ">
                               <input
@@ -157,7 +157,7 @@ const RzWatcher = () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div className="justify-center items-center text-center h-full p-12">
                             <div className="text-sm not-italic font-normal">
                               No results found
@@ -207,8 +207,8 @@ const RzWatcher = () => {
                               </div>
                             </div>
                             <div className="flex justify-end space-x-[10px]">
-                                <RzButton buttonText="Cancel" secondaryButton/>
-                                <RzButton buttonText="Save" primaryButton/>
+                              <RzButton buttonText="Cancel" secondaryButton />
+                              <RzButton buttonText="Save" primaryButton />
                             </div>
                           </div>
                         </div>

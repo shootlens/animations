@@ -1,0 +1,5 @@
+npm ERR! code EINTEGRITY
+npm ERR! errno EINTEGRITY
+npm ERR! Invalid response body while trying to fetch https://registry.npmjs.org/@types%2fcross-spawn: sha512-2q6QtYmoCq1LtBupjMhuOvDkDAAwt+srL81cXFXmkd4UNHQpDxF82IpoFvF4EacDDfU5em7nau3jHh6xNb5vTw== integrity checksum failed when using sha512: wanted sha512-2q6QtYmoCq1LtBupjMhuOvDkDAAwt+srL81cXFXmkd4UNHQpDxF82IpoFvF4EacDDfU5em7nau3jHh6xNb5vTw== but got sha512-/dL+Yrt4z3fpVwPPko0Rp0wgADuLW+LAQxURYcHDrcT+8w8+TtOkVWuvBOmvlqz/DygjgUgUf0f3iUP2iZiIbQ==. (6388 bytes)
+
+npm ERR! A complete log of this run can be found in: C:\Users\Admin\AppData\Local\npm-cache\_logs\2024-01-22T14_00_41_604Z-debug-0.log

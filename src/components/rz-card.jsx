@@ -1,5 +1,5 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import RzChip from "./rz-chip";
+import RzBadge from "./atoms/rz-badge";
 
 const RzCard = ({
   workflowCard,
@@ -32,7 +32,11 @@ const RzCard = ({
                 {showActions && (
                   <div className="flex items-center text-[#94A3B8] space-x-[10px] shrink-0">
                     {ActionIconsList.map((iconProps, index) => (
-                      <div key={index} onClick={iconProps.onClick} className="w-5 h-5 text-[#94A3B8] ">
+                      <div
+                        key={index}
+                        onClick={iconProps.onClick}
+                        className="w-5 h-5 text-[#94A3B8] "
+                      >
                         {iconProps.icon}
                       </div>
                     ))}
@@ -49,7 +53,20 @@ const RzCard = ({
             <div className="flex justify-between">
               {!showActiveSubscriptions && (
                 <div className="flex space-x-[10px]">
-                  <RzChip title="2 documents" /> <RzChip title="2 documents" />
+                  <RzBadge
+                    title="2 documents"
+                    textColor="#8463F9"
+                    backgroundColor="#EDE8FE"
+                    borderColor="#8463F9"
+                    horizontalPadding="5px"
+                  />
+                  <RzBadge
+                    title="2 documents"
+                    textColor="#8463F9"
+                    backgroundColor="#EDE8FE"
+                    borderColor="#8463F9"
+                    horizontalPadding="5px"
+                  />
                 </div>
               )}
               {showUsrAvatar && !showActiveSubscriptions && (
@@ -64,8 +81,20 @@ const RzCard = ({
                   Active Subscriptions:
                 </div>
                 <div className="flex space-x-4">
-                  <RzChip title="Live Chat" />
-                  <RzChip title="ITSM" />
+                  <RzBadge
+                    title="Live Chat"
+                    textColor="#8463F9"
+                    backgroundColor="#EDE8FE"
+                    borderColor="#8463F9"
+                    horizontalPadding="5px"
+                  />
+                  <RzBadge
+                    title="ITSM"
+                    textColor="#8463F9"
+                    backgroundColor="#EDE8FE"
+                    borderColor="#8463F9"
+                    horizontalPadding="5px"
+                  />
                 </div>
               </div>
             )}
@@ -95,7 +124,13 @@ const RzCard = ({
                   <div className="text- text-sm font-medium leading-normal">
                     {workflowTitle !== "" ? workflowTitle : ""}
                   </div>
-                  <RzChip title="Published" />
+                  <RzBadge
+                    title="Published"
+                    textColor="#8463F9"
+                    backgroundColor="#EDE8FE"
+                    borderColor="#8463F9"
+                    horizontalPadding="5px"
+                  />
                 </div>
                 {workflowActionsList !== null && (
                   <div className="flex items-center text-[#94A3B8] space-x-[10px] shrink-0">
