@@ -5,7 +5,7 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import RzButton from "../animation-components/rz-button-component";
+import RzButton from "../components/atoms/rz-button";
 
 const RzDropdown = ({
   title,
@@ -184,7 +184,7 @@ const RzDropdown = ({
               ))}
               {haveClearButton && (
                 <div className="justify-center flex max-w-full mt-2">
-                  <RzButton buttonText="Clear Selected" secondaryButton />
+                  <RzButton text="Clear Selected" type="secondary" />
                 </div>
               )}
             </ul>

@@ -7,7 +7,7 @@ import {
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RzAvatar from "../components/rz-avatar";
-import RzButton from "../animation-components/rz-button-component";
+import RzButton from "../components/atoms/rz-button";
 
 const RzWatcher = () => {
   const [toggle, setToggle] = useState(false);
@@ -159,14 +159,12 @@ const RzWatcher = () => {
                           </div>
 
                           <div className="justify-center items-center text-center h-full p-12">
-                            <div className="text-sm not-italic font-normal">
-                              No results found
+                            <div className="inline-flex justify-center items-centers flex-col">
+                              <div className="text-sm not-italic font-normal mb-3">
+                                No results found
+                              </div>
+                              <RzButton text="Add Watcher" />
                             </div>
-                            <RzButton
-                              buttonText="Add Watcher"
-                              primaryButton
-                              buttonClick={() => {}}
-                            />
                           </div>
 
                           <div className="px-2 pt-4 ">
@@ -207,8 +205,8 @@ const RzWatcher = () => {
                               </div>
                             </div>
                             <div className="flex justify-end space-x-[10px]">
-                              <RzButton buttonText="Cancel" secondaryButton />
-                              <RzButton buttonText="Save" primaryButton />
+                              <RzButton text="Cancel" type="secondary" />
+                              <RzButton text="Save" />
                             </div>
                           </div>
                         </div>

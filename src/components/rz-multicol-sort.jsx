@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/24/outline";
 import RzDropdown from "../animation-components/rz-dropdown-animation";
 import { useState } from "react";
-import RzButton from "../animation-components/rz-button-component";
+import RzButton from "../components/atoms/rz-button";
 
 const MulticolSort = () => {
   const [isopen, setisopen] = useState(false);
@@ -119,23 +119,12 @@ const MulticolSort = () => {
                 </div>
               </div>
               <div className="pb-10 pt-2">
-                <RzButton
-                  buttonText="Add another sort column"
-                  secondaryButton
-                />
+                <RzButton text="Add another sort column" type="secondary" />
               </div>
               <div className="flex justify-end space-x-[10px]">
-                <RzButton buttonText="Cancel" secondaryButton />
-                <RzButton buttonText="Save" primaryButton />
+                <RzButton text="Cancel" type="secondary" />
+                <RzButton text="Save" />
               </div>
-
-              {/* <div className=" w-5/6 mr-3">
-                <RzDropdown items={items} title="Category"/>
-              </div> */}
-              {/* <div className="flex space-x-[10px]">
-                <BarsArrowDownIcon className="w-[22px] h-[22px] text-[#94A3B8]" />
-                <BarsArrowUpIcon className="w-[22px] h-[22px] text-[#94A3B8]" />
-              </div> */}
             </div>
           )}
         </div>

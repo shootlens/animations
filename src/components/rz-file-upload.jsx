@@ -1,4 +1,4 @@
-import RzButton from "../animation-components/rz-button-component";
+import RzButton from "../components/atoms/rz-button";
 import AddImage from "../assets/icons/add-image.svg";
 
 const RzFileUpload = () => {
@@ -28,7 +28,7 @@ const RzFileUpload = () => {
               placeholder="Add your URL"
             />
             <div className="ms-2">
-              <RzButton buttonText="Upload" primaryButton />
+              <RzButton text="Upload" />
             </div>
           </div>
         </div>

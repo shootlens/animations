@@ -112,8 +112,10 @@ const RzButton = ({
         disabled={disabled}
         style={{ borderRadius: buttonRadius ? buttonRadius : "5px" }}
       >
-        {icon && <div className={`w-4 h-4 ${getColorClass()}`}>{icon}</div>}
-        {text && <div className=" ml-[5px] text-sm">{text}</div>}
+        {icon && (
+          <div className={`w-4 h-4  mr-[5px] ${getColorClass()}`}>{icon}</div>
+        )}
+        {text && <div className=" text-sm">{text}</div>}
       </button>
     </>
   );
