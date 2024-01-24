@@ -1,5 +1,5 @@
 import { XCircleIcon } from "@heroicons/react/24/outline";
-import RzPopoverMenu from "../components/rz-popover-menu";
+import RzDropdown from "../components/rz-dropdown";
 
 const DropdownComponentPage = () => {
   const Items = [
@@ -28,7 +28,7 @@ const DropdownComponentPage = () => {
             Dropdown page
           </div>
           <div className="max-w-md mx-auto">
-            <RzPopoverMenu
+            <RzDropdown
               items={Items}
               // multiselectTitle="title"
               // multiselect={true}

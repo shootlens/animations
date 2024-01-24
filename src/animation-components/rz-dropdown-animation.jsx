@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
-const RzDropdown = ({
+const RzDropdownAnimation = ({
   customizeList,
   items = [],
   title,
@@ -153,4 +153,4 @@ const RzDropdown = ({
   );
 };
 
-export default RzDropdown;
+export default RzDropdownAnimation;

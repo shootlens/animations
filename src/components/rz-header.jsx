@@ -5,7 +5,7 @@ import {
   Cog8ToothIcon,
   PowerIcon,
 } from "@heroicons/react/24/outline";
-import RzPopoverMenu from "./rz-popover-menu";
+import RzPopoverMenu from "./rz-dropdown";
 import RzAvatar from "./rz-avatar";
 
 const RzHeader = ({ leftSideChildren, rightSideChildren }) => {

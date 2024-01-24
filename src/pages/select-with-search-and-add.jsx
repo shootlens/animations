@@ -1,5 +1,5 @@
 import RzButton from "../animation-components/rz-button-component";
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 
 const SelectWithSearchAndAddComponent = () => {
   const items = [

@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/outline";
 import RzButton from "../animation-components/rz-button-component";
 
-const RzPopoverMenu = ({
+const RzDropdown = ({
   title,
   items,
   multiselect,
@@ -183,7 +183,7 @@ const RzPopoverMenu = ({
                 </li>
               ))}
               {haveClearButton && (
-                <div className="justify-center flex max-w-full">
+                <div className="justify-center flex max-w-full mt-2">
                   <RzButton buttonText="Clear Selected" secondaryButton />
                 </div>
               )}
@@ -195,7 +195,7 @@ const RzPopoverMenu = ({
   );
 };
 
-RzPopoverMenu.propTypes = {
+RzDropdown.propTypes = {
   title: PropTypes.element,
   customIcon: PropTypes.element,
   listTitle: PropTypes.string,
@@ -209,4 +209,4 @@ RzPopoverMenu.propTypes = {
   multiselect: PropTypes.bool,
 };
 
-export default RzPopoverMenu;
+export default RzDropdown;

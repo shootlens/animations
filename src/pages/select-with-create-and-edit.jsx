@@ -1,4 +1,4 @@
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const SelectWithCreateAndEditComponent = () => {

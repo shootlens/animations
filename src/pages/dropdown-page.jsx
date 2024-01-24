@@ -1,4 +1,4 @@
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 
 const DropdownPage = () => {
   const code = `

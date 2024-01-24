@@ -31,7 +31,7 @@ import IconoirPackegeIcon from "../../assets/icons/iconoir-packages-icon.svg";
 import RzToggle from "../../components/atoms/rz-toggle";
 import RzBadge from "../../components/atoms/rz-badge";
 import RzAvatar from "../../components/rz-avatar";
-import RzPopoverMenu from "../../components/rz-popover-menu";
+import RzPopoverMenu from "../../components/rz-dropdown";
 import AuditHistoryItem from "../../components/audit-hisory-item";
 import RzDrawer from "../../components/rz-drawer";
 import SmartTicketHistoryItem from "../../components/smart-ticket-history-item";

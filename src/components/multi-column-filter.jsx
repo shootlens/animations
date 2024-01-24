@@ -8,7 +8,7 @@ import {
   PlusCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 import RzBadge from "../components/atoms/rz-badge";
 import RzTabs from "../components/rz-tabs";
 

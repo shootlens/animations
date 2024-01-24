@@ -1,5 +1,5 @@
 import { HashtagIcon } from "@heroicons/react/24/outline";
-import RzPopoverMenu from "../components/rz-popover-menu";
+import RzPopoverMenu from "../components/rz-dropdown";
 import React from "react";
 
 const DropdownPage = () => {

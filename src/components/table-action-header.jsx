@@ -15,14 +15,13 @@ import {
   PencilSquareIcon,
   PlusCircleIcon,
   Bars3Icon,
-  ChevronRightIcon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
-import RzPopoverMenu from "./rz-popover-menu";
+import RzPopoverMenu from "./rz-dropdown";
 import RzTabs from "./rz-tabs";
 import RzDrawer from "./rz-drawer";
 import RzButton from "./atoms/rz-button";
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 import RzBadge from "./atoms/rz-badge";
 
 const TableActionHeader = ({ tableTitle }) => {

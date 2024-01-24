@@ -14,7 +14,6 @@ import "../index.css";
 import RzAvatar from "../components/rz-avatar";
 import RzBadge from "../components/atoms/rz-badge";
 import RzPriorityChip from "../components/rz-priority-chip";
-import DownloadListItem from "../components/listing/download-list-item";
 import RzTableComponent from "../pages/table-component-page";
 import AdobeImage from "../assets/icons/Adobe.svg";
 import JiraImage from "../assets/icons/jira.svg";

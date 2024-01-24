@@ -2,7 +2,7 @@ import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
 } from "@heroicons/react/24/outline";
-import RzDropdown from "../animation-components/rz-dropdown";
+import RzDropdown from "../animation-components/rz-dropdown-animation";
 import { useState } from "react";
 import RzButton from "../animation-components/rz-button-component";
 
