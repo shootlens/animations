@@ -110,7 +110,7 @@ const RzButton = ({
         className={` ripple-button overflow-hidden relative focus:outline-none text-xs not-italic font-normal flex items-center ${getSizeClasses()} ${getTypeClasses()} ${getBorderRadiusClasses()}`}
         onClick={handleClick}
         disabled={disabled}
-        style={{ borderRadius: buttonRadius ? buttonRadius : "5px" }}
+        style={{ borderRadius: isGroup ? "" : buttonRadius || "5px" }}
       >
         {icon && (
           <div className={`w-4 h-4  mr-[5px] ${getColorClass()}`}>{icon}</div>

@@ -96,19 +96,21 @@ const RzTableComponent = ({
             <input type="checkbox" className="h-4 w-4" />
           ) : (
             <>
-              <div className="relative whitespace-nowrap justify-between uppercase w-full items-center px-10 text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
-                <div className="flex">
+              <div className="relative whitespace-nowrap justify-between uppercase w-full items-center text-start text-black text-sm not-italic font-normal flex pt-[14px] pb-[25px]">
+                <div className="flex items-center mx-10">
                   {label}
 
                   {isSortable && (
-                    <ChevronUpDownIcon className="h-[18px] w-[18px] text-[#94A3B8] px-[2px]" />
+                    <div className="h-[18px] w-[18px] cursor-pointer">
+                      <ChevronUpDownIcon className="h-[18px] w-[18px] text-[#94A3B8] px-[2px] cursor-pointer" />
+                    </div>
                   )}
                 </div>
 
                 {enableColumnSearch && (
                   <div className="ml-4">
                     <MagnifyingGlassIcon
-                      className="w-4 h-4 text-[#6B7280]"
+                      className="w-4 h-4 text-[#6B7280] cursor-pointer"
                       onClick={() => toggleSearchBar(index)}
                     />
                     {searchBar[index] && <SearchBar />}
