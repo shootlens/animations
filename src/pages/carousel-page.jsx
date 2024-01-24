@@ -24,6 +24,7 @@ const CarouselPage = () => {
     className: "center",
     centerMode: true,
     centerPadding: "4%",
+    arrows: false,
   };
 
   return (
