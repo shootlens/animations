@@ -17,11 +17,11 @@ import {
   Bars3Icon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
-import RzPopoverMenu from "./rz-dropdown";
+import RzPopoverMenu from "./rz-popover";
 import RzTabs from "./rz-tabs";
 import RzDrawer from "./rz-drawer";
 import RzButton from "./atoms/rz-button";
-import RzDropdown from "../animation-components/rz-dropdown-animation";
+import RzDropdown from "../components/rz-dropdown";
 import RzBadge from "./atoms/rz-badge";
 
 const TableActionHeader = ({ tableTitle }) => {

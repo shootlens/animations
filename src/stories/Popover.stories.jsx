@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "../components/rz-dropdown";
+import Popover from "../components/rz-popover";
 import "../index.css";
 import {
   DocumentDuplicateIcon,
@@ -10,8 +10,8 @@ import {
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const story = {
-  title: "Components/Dropdown",
-  component: Dropdown,
+  title: "Components/Popover",
+  component: Popover,
 };
 
 export default story;
@@ -50,7 +50,7 @@ const Items = [
 const Template = (args) => (
   <div className="h-[90vh] pt-9 px-9 w-full">
     <div className="flex justify-center">
-      <Dropdown title="Dropdown" items={Items} {...args} />
+      <Popover title="Dropdown" items={Items} {...args} />
     </div>
   </div>
 );

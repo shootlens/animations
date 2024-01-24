@@ -1,193 +1,151 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import PropTypes from "prop-types";
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/24/outline";
-import RzButton from "../components/atoms/rz-button";
+import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
-const RzDropdown = ({
+const RzDropdownAnimation = ({
+  customizeList,
+  items = [],
   title,
-  items,
-  multiselect,
-  customIcon,
-  multiselectTitle,
-  divider,
-  itemsWithSearch,
-  itemsWithIcon,
-  listTitle,
-  customClass,
-  leftSideIcon,
-  haveClearButton,
-  customTitleClass,
+  isSearchable,
+  addButton,
+  emptyState,
+  additionalContent,
+  hideEditIcon = true,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const dropdownRef = useRef(null);
 
-  const togglePopover = () => {
-    if (items && items.length > 0) {
-      setIsOpen(!isOpen);
-    }
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
+  const handleSelectItem = (item) => {
+    setSelectedItem(item);
+    setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+  };
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
 
-  if (!items || items.length === 0) {
-    return null;
-  }
+  const calculateDropdownWidth = () => {
+    const headerWidth = dropdownRef.current?.offsetWidth;
+    return headerWidth ? `${headerWidth}px` : "auto";
+  };
 
-  const renderTitle = () => (
-    <div
-      className={`mx-2 text-[#6B7280] text-justify text-sm not-italic whitespace-nowrap ${customTitleClass}`}
-    >
-      {title}
-    </div>
-  );
+  const dropdownVariants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: -10 },
+  };
 
-  const renderListTitle = () => (
-    <div className="px-[12px] py-[8px] text-sm not-italic font-normal leading-5 border-b text-[#111827]">
-      {listTitle}
-    </div>
-  );
+  const itemVariants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: -10 },
+  };
 
-  const renderChevronIcon = () => (
-    <div className="">
-      {" "}
-      <ChevronDownIcon
-        className={`h-5 w-5 text-[#94A3B8]  ${
-          isOpen
-            ? "transform rotate-180 duration-300"
-            : "transform rotate-0 duration-300"
-        }`}
-      />
-    </div>
-  );
-
-  const renderCustomIcon = () => <div className="">{customIcon}</div>;
-
-  const renderSearchInput = () => (
-    <div className="border-[1px] rounded-md flex mx-[10px] items-center mt-[10px]">
-      <input
-        type="text"
-        placeholder="Search"
-        className="border rounded-md py-1 pl-[10px] pr-[10px] focus:outline-none"
-      />
-      <MagnifyingGlassIcon className="w-4 h-4 mr-[10px] text-gray-400 absolute right-[10px]" />
-    </div>
-  );
-
-  const renderMultiselectSearch = () => (
-    <>
-      <div className="flex justify-between my-[10px] pb-[10px] border-b ">
-        <div className="text-black text-sm font-medium mx-[10px] ">
-          {multiselectTitle !== null ? multiselectTitle : ""}
-        </div>
-        <div className="text-[#2563EB] text-xs font-normal leading-normal mx-[10px] ">
-          Restore Default
-        </div>
-      </div>
-      {renderSearchInput()}
-    </>
-  );
-
-  const renderSearch = () => renderSearchInput();
+  const defaultStyles =
+    "py-1 absolute custom-scroll rounded-md w-full mt-2 list-none bg-white border shadow-sm z-10 flex flex-col justify-between";
+  const combinedStyles = `${defaultStyles} ${customizeList || ""}`;
 
   return (
-    <div
-      onClick={togglePopover}
-      className={`relative inline-block cursor-pointer${
-        title
-          ? `border-[#D1D5DB] border bg-white p-1.5 rounded-[5px] ${customClass}`
-          : ""
-      }`}
-      ref={dropdownRef}
-    >
-      <button
-        type="button"
-        className={`flex items-center ${
-          leftSideIcon ? "flex-row-reverse" : ""
-        }`}
+    <div style={{ position: "relative" }}>
+      <div
+        className={`flex justify-between items-center border-[#D1D5DB] border px-2 rounded-md py-[3px] max-w-full bg-white`}
+        onClick={toggleDropdown}
+        ref={dropdownRef}
+        id="dropdown-header"
       >
-        {title && renderTitle()}
-        {!customIcon && renderChevronIcon()}
-        {customIcon && renderCustomIcon()}
-      </button>
+        <div className="text-sm not-italic font-normal text-[#6B7280]">
+          {selectedItem ? selectedItem : title ? title : "Options"}
+        </div>
+        <div>
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`transition-transform duration-75 text-gray-400 ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
+            initial={false}
+            animate={{ rotate: !isOpen ? 180 : 0 }}
+          >
+            <path d="M18 15l-6-6-6 6" />
+          </motion.svg>
+        </div>
+      </div>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className={`absolute right-0 mt-4 w-56 bg-white border border-gray-200 rounded-md shadow-lg`}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            style={{ zIndex: 9999 }}
+            className={combinedStyles}
+            variants={dropdownVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            style={{
+              maxHeight: "300px",
+            }}
           >
-            {multiselect && renderMultiselectSearch()}
+            {isSearchable && (
+              <motion.div
+                key="search-input"
+                className="rounded-md mb-1 border border-[#D1D5DB] px-2 mx-2 mt-2"
+              >
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="py-0.5 w-full flex-grow"
+                />
+              </motion.div>
+            )}
+            <div className="h-full overflow-y-auto overflow-x-hidden custom-scroll">
+              {emptyState ? (
+                <div className="text-center">
+                  {additionalContent ?? "empty"}
+                </div>
+              ) : (
+                <div>
+                  {items.map((item, index) => (
+                    <motion.li
+                      style={{ width: calculateDropdownWidth() }}
+                      key={index}
+                      className={` hover:bg-[#f0f0f0] transition-background duration-100 cursor-pointer text-sm not-italic font-normal leading-5 text-[#374151] px-2 border-none flex justify-between items-center ${
+                        selectedItem === item ? "bg-gray-100" : ""
+                      }`}
+                      variants={itemVariants}
+                      onClick={() => handleSelectItem(item)}
+                      onMouseEnter={() => handleMouseEnter(item)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <span className="py-1.5 px-1">{item}</span>
 
-            {listTitle && renderListTitle()}
-
-            {itemsWithSearch && !multiselect && renderSearch()}
-
-            <ul className="py-2">
-              {items.map((item, index) => (
-                <li
-                  key={index}
-                  className={`px-4 py-2 ${divider ? "border-b" : ""} ${
-                    multiselect
-                      ? "flex items-center justify-between"
-                      : "hover:bg-gray-100 cursor-pointer flex items-center justify-between"
-                  }`}
-                  onClick={() => {
-                    item.onClick && item.onClick(item.label);
-                  }}
-                >
-                  {multiselect && (
-                    <div className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        className="h-4 w-4 text-blue-500"
-                      />
-                      <div className="text-sm text-[#6B7280] not-italic">
-                        {item.label}
-                      </div>
-                    </div>
-                  )}
-                  {!multiselect && (
-                    <>
-                      <div className="text-sm not-italic">{item.label}</div>
-                      {itemsWithIcon && (
+                      {hideEditIcon && hoveredItem === item && (
                         <div
-                          onClick={() =>
-                            item.iconOnClick && item.iconOnClick(item.label)
-                          }
-                          className="text-[#94A3B8] w-6 h-6"
+                          className="inline-flex text-[#2563EB] items-center"
+                          onClick={() => console.log("clicked")}
                         >
-                          {item.icon}
+                          <PencilSquareIcon className="ml-2 w-6 h-6" />
+                          Edit
                         </div>
                       )}
-                    </>
-                  )}
-                </li>
-              ))}
-              {haveClearButton && (
-                <div className="justify-center flex max-w-full mt-2">
-                  <RzButton text="Clear Selected" type="secondary" />
+                    </motion.li>
+                  ))}
                 </div>
               )}
-            </ul>
+            </div>
+            <motion.div>{addButton ?? ""}</motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -195,18 +153,4 @@ const RzDropdown = ({
   );
 };
 
-RzDropdown.propTypes = {
-  title: PropTypes.element,
-  customIcon: PropTypes.element,
-  listTitle: PropTypes.string,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      icon: PropTypes.element.isRequired,
-      onClick: PropTypes.func,
-    })
-  ),
-  multiselect: PropTypes.bool,
-};
-
-export default RzDropdown;
+export default RzDropdownAnimation;
