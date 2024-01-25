@@ -4,7 +4,6 @@ import "../../styles/rz-button.css";
 const RzButton = ({
   size = "sm",
   type = "primary",
-  disabled = false,
   onClick,
   text,
   icon,
@@ -33,9 +32,7 @@ const RzButton = ({
       case "secondary":
         return "bg-white text-[#6B7280] border border-[#D1D5DB]";
       case "tertiary":
-        return disabled
-          ? "text-[#8993A1] cursor-not-allowed"
-          : "text-[#2563EB]";
+        return "text-[#2563EB]";
       case "disabled":
         return "bg-[#E5E7EB] text-[#8993A1] cursor-not-allowed";
       default:
@@ -50,7 +47,7 @@ const RzButton = ({
       case "secondary":
         return "text-[#6B7280]";
       case "tertiary":
-        return disabled ? "text-[#8993A1]" : "text-[#2563EB]";
+        return "text-[#2563EB]";
       case "disabled":
         return "text-[#8993A1]";
       default:
@@ -77,7 +74,7 @@ const RzButton = ({
   };
 
   const handleClick = (e) => {
-    if (!disabled && type !== "disabled" && onClick) {
+    if (type !== "disabled" && onClick) {
       addRipple(e);
       onClick();
     }
@@ -109,7 +106,6 @@ const RzButton = ({
         ref={rippleContainerRef}
         className={` ripple-button overflow-hidden relative focus:outline-none text-xs not-italic font-normal flex items-center ${getSizeClasses()} ${getTypeClasses()} ${getBorderRadiusClasses()}`}
         onClick={handleClick}
-        disabled={disabled}
         style={{ borderRadius: isGroup ? "" : buttonRadius || "5px" }}
       >
         {icon && (

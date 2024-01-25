@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-const RzAvatar = ({ imgUrl, firstName, customRadius, isSingleLetter }) => {
+const RzAvatar = ({
+  imgUrl,
+  firstName,
+  customRadius,
+  isSingleLetter,
+  showOverlayDot,
+}) => {
   const [randomColor, setRandomColor] = useState(generateRandomColor());
   const [imgError, setImgError] = useState(false);
 
@@ -17,6 +23,8 @@ const RzAvatar = ({ imgUrl, firstName, customRadius, isSingleLetter }) => {
     setRandomColor(generateRandomColor());
   }, [imgUrl, imgError]);
 
+  const overlayDotSize = customRadius ? customRadius * 0.2 : 3;
+
   return (
     <div>
       <div
@@ -28,13 +36,28 @@ const RzAvatar = ({ imgUrl, firstName, customRadius, isSingleLetter }) => {
         }}
       >
         {imgUrl && !imgError ? (
-          <img
-            className="h-9 w-9 rounded-full"
-            src={imgUrl}
-            alt=""
-            onError={() => setImgError(true)}
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
+          <>
+            {" "}
+            <img
+              className="h-9 w-9 rounded-full"
+              src={imgUrl}
+              alt=""
+              onError={() => setImgError(true)}
+              style={{ objectFit: "cover", height: "100%", width: "100%" }}
+            />
+            {showOverlayDot && (
+              <div
+                className="absolute  block rounded-full bg-gray-300 ring-2 ring-white"
+                style={{
+                  transform: "translate(50%, -50%)",
+                  height: `${overlayDotSize}px`,
+                  width: `${overlayDotSize}px`,
+                  top: `${overlayDotSize / 1.9}px`,
+                  right: `${overlayDotSize / 1.2}px`
+                }}
+              />
+            )}
+          </>
         ) : (
           <div className="text-center uppercase  flex text-white">
             {firstName !== null

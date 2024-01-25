@@ -25,7 +25,7 @@ const RzSearch = () => {
 
   return (
     <div className="relative">
-      <div className="inline-flex p-1 rounded-lg items-center cursor-pointer border " onClick={toggleSearch}>
+      <div className="inline-flex p-2 rounded-lg items-center cursor-pointer border " onClick={toggleSearch}>
         {isSearchOpen ? (
           <XMarkIcon className="h-[18px] w-[18px] text-[#94A3B8] transition duration-300" />
         ) : (

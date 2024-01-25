@@ -1,45 +1,43 @@
-import { Button } from './Button';
+import React from "react";
+import Button from "../components/atoms/rz-button";
+import "../index.css";
+import { ChevronDoubleUpIcon } from "@heroicons/react/24/outline";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-export default {
-  title: 'Example/Button',
+const story = {
+  title: "Components/Atoms/Button",
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    type: {
+      options: ["primary", "secondary", "tertiary", "disabled"],
+      control: { type: "select" },
+    },
+    buttonRadius: {
+      options: [4, 8, 100],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["sm", "md", "lg"],
+      control: { type: "select" },
+    },
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
+export default story;
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
-};
+const Template = (args) => (
+  <div className="flex justify-center items-center w-full">
+    <Button
+      text="Button"
+      disabled="true"
+      {...args}
+      onClick={() => console.log("cancel clicked")}
+    />
+  </div>
+);
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
+export const Default = Template.bind({});
 
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const ButtonWithIcon = Template.bind({});
+ButtonWithIcon.args = {
+  icon: <ChevronDoubleUpIcon className="w-4 h-4" />,
 };

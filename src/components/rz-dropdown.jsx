@@ -50,13 +50,13 @@ const RzDropdownAnimation = ({
   };
 
   const defaultStyles =
-    "py-1 absolute custom-scroll rounded-md w-full mt-2 list-none bg-white border shadow-sm z-10 flex flex-col justify-between";
+    "py-1 absolute custom-scroll rounded-[10px] w-full mt-4 list-none bg-white shadow-lg z-10 flex flex-col justify-between";
   const combinedStyles = `${defaultStyles} ${customizeList || ""}`;
 
   return (
     <div style={{ position: "relative" }}>
       <div
-        className={`flex justify-between items-center border-[#D1D5DB] border px-2 rounded-md py-[3px] max-w-full bg-white`}
+        className={`flex justify-between items-center border-[#D1D5DB] border px-2 rounded-md py-[5px] max-w-full bg-white`}
         onClick={toggleDropdown}
         ref={dropdownRef}
         id="dropdown-header"

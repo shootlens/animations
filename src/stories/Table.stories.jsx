@@ -1,5 +1,4 @@
 import React from "react";
-import Table from "../pages/table-component-page";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import {
@@ -14,7 +13,7 @@ import "../index.css";
 import RzAvatar from "../components/rz-avatar";
 import RzBadge from "../components/atoms/rz-badge";
 import RzPriorityChip from "../components/rz-priority-chip";
-import RzTableComponent from "../pages/table-component-page";
+import RzTableComponent from "../components/table-component";
 import AdobeImage from "../assets/icons/Adobe.svg";
 import JiraImage from "../assets/icons/jira.svg";
 import BoxImage from "../assets/icons/box.svg";
@@ -22,7 +21,7 @@ import GroupedTable from "../components/grouped-table";
 
 const story = {
   title: "Components/Table",
-  component: Table,
+  component: RzTableComponent,
 };
 
 export default story;
@@ -195,7 +194,7 @@ const TableData = [
 const Template = (args) => (
   <div>
     <DndProvider backend={HTML5Backend}>
-      <Table
+      <RzTableComponent
         ColumnHeaders={ColumnHeaders}
         tableContent={TableData}
         showCheckbox

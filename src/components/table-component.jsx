@@ -7,7 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-import TableActionHeader from "../components/table-action-header";
+import TableActionHeader from "./table-action-header";
 
 const RzTableComponent = ({
   isDraggable = false,

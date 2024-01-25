@@ -31,3 +31,10 @@ AvatarWithImage.args = {
   imgUrl:
     "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
 };
+
+export const WithStatus = Template.bind({});
+WithStatus.args = {
+  imgUrl:
+    "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+  showOverlayDot: true,
+};

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
-const CarouselPage = () => {
+const CarouselComponent = () => {
   const sliderRef = useRef(null);
 
   const next = () => {
@@ -86,4 +86,4 @@ const CarouselPage = () => {
   );
 };
 
-export default CarouselPage;
+export default CarouselComponent;

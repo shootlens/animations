@@ -127,7 +127,7 @@ const RzWatcher = () => {
                               />
                               <RzAvatar
                                 firstName="Tom Cook"
-                                customRadius={24}
+                                customRadius={28}
                               />
                               <div className="ml-[8px]">
                                 <div className="text-sm not-italic font-normal">
@@ -145,7 +145,7 @@ const RzWatcher = () => {
                               />
                               <RzAvatar
                                 firstName="Tom Cook"
-                                customRadius={24}
+                                customRadius={28}
                               />
                               <div className="ml-[8px]">
                                 <div className="text-sm not-italic font-normal">

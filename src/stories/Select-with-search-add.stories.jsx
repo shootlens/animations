@@ -1,10 +1,10 @@
 import React from "react";
-import Carousel from "../components/carousel-component";
+import SelectWithSearchAdd from "../components/select-with-search-and-add";
 import "../index.css";
 
 const story = {
-  title: "Components/Carousel",
-  component: Carousel,
+  title: "Components/SelectWithSeachAdd",
+  component: SelectWithSearchAdd,
 };
 
 export default story;
@@ -12,7 +12,7 @@ export default story;
 const Template = (args) => (
   <div className="h-[90vh] pt-9 px-9 w-full">
     <div className="flex justify-center">
-      <Carousel {...args} />
+      <SelectWithSearchAdd {...args} />
     </div>
   </div>
 );
