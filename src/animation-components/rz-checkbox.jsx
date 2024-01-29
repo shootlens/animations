@@ -15,12 +15,12 @@ const RzCheckBox = ({ label, checked }) => {
           <div className="relative inline-flex p-3 rounded-full cursor-pointer">
             <input
               type="checkbox"
-              className="before:content[''] peer relative h-4 w-4 cursor-pointer rounded-[4px] border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-9 before:w-9 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#4F46E5] checked:bg-[#4F46E5] checked:before:bg-[#4F46E5] hover:before:opacity-10"
+              className="before:content[''] peer relative h-4 w-4 cursor-pointer rounded-[4px] border border-[#4F46E5] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-9 before:w-9 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-500 before:opacity-0 before:transition-opacity checked:border-[#4F46E5] checked:bg-[#4F46E5] checked:before:bg-[#4F46E5] hover:before:opacity-10"
               id="checkbox"
               checked={isChecked}
               onChange={handleChange}
             />
-            <div className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+            <div className="absolute border-[#4F46E5] border rounded-[4px] text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100 bg-[#4F46E5]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-3.5 w-3.5"

@@ -34,7 +34,7 @@ const RzAvatar = ({ imgUrl, firstName, customRadius, isSingleLetter }) => {
             alt=""
             onError={() => setImgError(true)}
             style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
+          />  
         ) : (
           <div className="text-center uppercase  flex text-white">
             {firstName !== null

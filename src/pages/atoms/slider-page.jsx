@@ -29,8 +29,8 @@ const SliderPage = () => {
             />
           </div>
         </div>
-
-        <div className="mx-9">
+        {/* custom slider not need to remove */}
+        {/* <div className="mx-9">
           <div className="mb-4">
             <div className="relative">
               <div className="flex justify-center items-center">
@@ -65,7 +65,7 @@ const SliderPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
