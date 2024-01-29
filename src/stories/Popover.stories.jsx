@@ -50,7 +50,7 @@ const Items = [
 const Template = (args) => (
   <div className="h-[90vh] pt-9 px-9 w-full">
     <div className="flex justify-center">
-      <Popover title="Dropdown" items={Items} {...args} />
+      <Popover title="Popover" items={Items} {...args} />
     </div>
   </div>
 );
